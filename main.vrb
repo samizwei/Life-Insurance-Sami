@@ -1,0 +1,11 @@
+\frametitle{Markov Chains}
+\begin{proof}[continue]
+		\begin{align*}
+			p_{ij}(s,t) &= \mathbb{P}[X_t = j | X_s = i] \\
+			&= \mathbb{P}\left[X_t = j \cap \bigcup\limits_{k \in \mathcal{S}}\{X_u = k\} | X_s=i\right] \\
+			&= \sum\limits_{k \in \mathcal{S}}\mathbb{P}\left[X_t = j, X_u = k | X_s=i\right] \\
+			&= \sum\limits_{k \in \mathcal{S}} \frac{\mathbb{P}[X_t=j, X_u=k, X_s=i]}{\mathbb{P}[X_s=i]} \cdot \frac{\mathbb{P}[X_u=k, X_s=i]}{\mathbb{P}[X_u=k, X_s=i]} \\
+			&= \sum\limits_{k \in \mathcal{S}} p_{ik}(s,u) p_{kj}(u,t)
+		\end{align*}
+	\end{proof}
+	\small In the above we used Bayes' theorem and the Markov property.

@@ -1,9 +1,4 @@
 \babel@toc {english}{}\relax 
 \beamer@sectionintoc {1}{Markov Model}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Banach Fixed Point Theorem}{13}{0}{1}
-\beamer@subsectionintoc {1}{2}{The Fixed Point Algorithm}{21}{0}{1}
-\beamer@subsectionintoc {1}{3}{Fixed Point The Case Where Multiple Derivatives Are Zero at The Fixed Point}{22}{0}{1}
-\beamer@sectionintoc {2}{Steffensen's Acceleration Method}{33}{0}{2}
-\beamer@subsectionintoc {2}{1}{Aitken's $\Delta ^2$ Method}{33}{0}{2}
-\beamer@subsectionintoc {2}{2}{Steffensen's Acceleration Method}{45}{0}{2}
-\beamer@sectionintoc {3}{Comparison With Fixed point iteration and Steffensen's Acceleration Method}{49}{0}{3}
+\beamer@sectionintoc {2}{Task 2 : Stopping to pay Premium}{10}{0}{2}
+\beamer@sectionintoc {3}{Disability Insurance on two lives}{12}{0}{3}

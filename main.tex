@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[10pt]{beamer}
 
 \mode<presentation>
 {
@@ -11,6 +11,11 @@
 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
+\usepackage{mathtools}
+
+% \usepackage{amsfonts}
+% \usepackage{amsmath}
+% \usepackage{amssymb}
 
 \title[Life Insurance Mathematics]{Exam Presentation \\Life Insurance Mathematics}
 \author{Sami Zweidler}
@@ -35,323 +40,415 @@
 \section{Markov Model}
 
 \begin{frame}{Markov Chains}
-    
+	What is a Markov Chain?\\
+	It is a Stochastic model that describes sequence of transitions from one state to another according to certain probabilistic rules.
+	\begin{figure}
+		\includegraphics[width=0.5\textwidth]{Example_Markov.png}
+	\end{figure}
 \end{frame}
 
 
-\begin{frame}{Frame Title}
-    
+\begin{frame}{Markow Chains}
+    \begin{block}{Definition}
+		$(X_t)_{t\in \mathbb{N}}: (\Omega, \mathcal{A}, \mathbb{P}) \to \mathcal{S} = \{1,2,3, \ldots\}$, is called a \textbf{Markov chain} if and only if,
+		\begin{equation*}
+			\mathbb{P}[X_{t_{m+1}} = i_{m+1} | X_{t_1}=i_1, \dots, X_{t_m}=i_m] = \mathbb{P}[X_{t_{m+1}} = i_{m+1} | X_{t_m}=i_m]
+		\end{equation*}
+		for $t_1 < t_2 < \dots < t_m < t_{m+1}$ and $i_1, i_2, \ldots, i_{m+1} \in \mathcal{S}$.
+	\end{block}
+	We say that such a stochastic process $(X_t)_{t\in \mathbb{N}}$ has no memory.
 \end{frame}
 
 
-\begin{frame}{Frame Title}
-    
+\begin{frame}{Markov Chains}
+    \begin{block}{Chapman-Kolmogorov Theorem}
+		Let $p_{ij}(s,t) = P(X_t = j | X_s = i)$ be the transition probabilities of a Markov chain. Then, for any $0 \leq s < u < t$,
+		\begin{equation*}
+			p_{ij}(s,t) = \sum_{k} p_{ik}(s,u) p_{kj}(u,t).
+		\end{equation*}
+		Or written in matrix form, $P(s,t) = P(s,u) P(u,t)$.
+	\end{block}
+	Idea: What is the probbility of being in state j at time t, given that at time s we are in state i?
 \end{frame}
 
-\begin{frame}{Fixed Point Iteration Method}
+\begin{frame}{Markov Chains}
+	\begin{block}{Proof}
 
-  \begin{block}{Definition}<1->
-A point p is a \textbf{fixed point} for a given function g if g(p)= p.
-\end{block}
- \begin{block}{Remark}<2->
- Fixed point problems and root finding problems are infact equivalent.
- \begin{itemize}
-\item<1->if p is a fixed point of the function g, then p is a root of the function
-$$f(x)=[g(x)-x]h(x)$$ [as long as $h(x)\in \mathbb{R}$]
-\item<2->if p is a root of the function of f, then p is a fixed point of the function 
-$$g(x)=x-h(x)f(x)$$ [as long as $h(x)\in \mathbb{R}$]
-\end{itemize}
-\end{block}
- \end{frame}
- \begin{frame}{Fixed Point Iteration Method}
-
- \begin{block}{Definition}<1->
-Let U be a subset of a metric space X.
-\\A function g:U $\rightarrow$X called \textbf{Lipschitz continuous} provided there exists a constant $\lambda\ge$ 0 (called Lipschitz constant)
-\\such that $\forall$ x,y$\in$U d(g(x),g(y))$\le$d(x,y)
-\\if $\lambda\in$[0,1], then g is called \textbf{contraction} (with contraction constant $\lambda$).
-\end{block} 
- \begin{block}{Theorem (A Fixed Point Theorem)}<2->
- Suppose $g:[a,b]\rightarrow[a,b]$ is continuous. Then g has a fixed point.
- 
-
-\end{block}
-\end{frame}
- \begin{frame}{Fixed Point Iteration Method}
-\begin{block}{Lemma}<1->
- A contraction has at most one fixed point.
- 
-
-\end{block}
-\begin{block}{Corollary}<2->
-Suppose $g:[a,b]\rightarrow[a,b]$ is continuous and $\lambda:=sup\mid g'(x)\mid<1$ for $x\in (a,b)$
-\\Then g is a contraction with contraction constant $\lambda.$
-\end{block}
-\vskip 1cm
-
-\end{frame}
-
-\begin{frame}{Graphical determination of the existence of a fixed point for the function $g(x)= \frac{x^2-3}{2}$}
-
-\includegraphics[width=355px, height= 200px]{Figure2.jpg}
+		\begin{align*}
+			p_{ij}(s,t) &= \mathbb{P}[X_t = j | X_s = i] = \mathbb{P}[X_t = j \cap \bigcup\limits_{k \in \mathcal{S}}\{X_u = k\} | X_s=i] \\
+			&= \sum\limits_{k \in \mathcal{S}}\mathbb{P}\left[X_t = j, X_u = k | X_s=i\right] \\
+			&= \sum\limits_{k \in \mathcal{S}} \frac{\mathbb{P}[X_t=j, X_u=k, X_s=i]}{\mathbb{P}[X_s=i]} \cdot \frac{\mathbb{P}[X_u=k, X_s=i]}{\mathbb{P}[X_u=k, X_s=i]} \\
+			&= \sum\limits_{k \in \mathcal{S}} \underbrace{\mathbb{P}[X_t=j | X_u=k, X_s=i]}_{\mathbb{P}[X_t=j | X_u=k]} \mathbb{P}[X_u=k | X_s=i] \\
+			&= \sum\limits_{k \in \mathcal{S}} p_{ik}(s,u) p_{kj}(u,t)
+		\end{align*}
+		% use Baye's theorem for conditional probabilities: 
+	\end{block}
+	In the above we used $\mathbb{P} [A \cap B | C] = \mathbb{P}[A | B \cap C] \cdot \mathbb{P}[B | C]$ as well as the Markov porperty 
+		as well as assuming that $\mathbb{P}[X_u=k, X_s=i] \neq 0$.
 \end{frame}
 
 
-
-\subsection{Banach Fixed Point Theorem}
-
-\begin{frame}{Banach Fixed Point Theorem}
-
-\begin{theorem}[Banach Fixed Point Theorem]
-  \begin{itemize}
-
-
- \item[]<1-> Let U be a complete subset of a metric space X, and let g:U$\rightarrow$U be a contraction with contraction constant $\lambda$.
-  \\Then  \begin{itemize}
-    \item<2-> g has a unique fixed point, say p.
-    \item<2->For any sequence $\left\{x_{n}\right\}$ defined by $x_n$=g($x_{n-1}$), n=1,2,,...
-    \\converges to this unique fixed point p.
-    \item[]<3->Moreover, we have the  \textbf{a priori} error estimate
-    $$ \mid x_n-p\mid\le\frac{\lambda^n}{1-\lambda}\mid x_1-x_0\mid$$
-    \item[]<4->and the \textbf{a posteriori} error estimate 
-      $$\mid x_n-p\mid\le\frac{\lambda}{1-\lambda}\mid x_n-x_{n-1}\mid$$
-\end{itemize}
-\end{itemize}  
-\end{theorem}
-\vskip 1cm
-
-
-\end{frame}
-
-
-\begin{frame}{Banach Fixed Point Theorem}
-
-\begin{block}{Proof}
-
-For $n > m$ , we have
-\begin{align*}
-\mid x_n-x_m\mid&=\mid x_n-x_{n-1}+x_{n-1}-x_{n-2}+...+x_{m+1}-x_{m}\mid\\
-&\le\mid x_n-x_{n-1}\mid + \mid x_{n-1}-x_{n-2}\mid+...+\mid x_{m+1}-x_{m}\mid\\
-&by  *\\
-&\le(\lambda^{n-1}+\lambda^{n-2}+...+\lambda^{m})\mid x_1-x_0\mid\\
-&=\lambda^{m}(\lambda^{n-m-1}+\lambda^{n-m-2}+...+1)\mid x_1-x_0\mid\\
-&=\lambda^{m}\frac{1-\lambda^{n-m}}{1-\lambda}\mid x_1-x_0\mid\le \frac{\lambda^m}{1-\lambda}\mid x_1-x_0\mid
- \end{align*}
- 
- so that ${x_n}$ is Cauchy sequence in U.
- \\Since U is complete, ${x_n}$ converges to a point p $\in$ U
-$$*\color{red}\mid x_k-x_{k-1}\mid=\mid g(x_{k-1})-g(x_{k-2})\mid\le\lambda\mid x_{k-1}-x_{k-2}\mid\le..\le\lambda^{k-1}\mid x_1-x_0\mid\color{black}$$
-
-\end{block}
-
-\vskip 1cm
-
-\end{frame}
-
-
-\begin{frame}
-\begin{proof}[Continue]
-\begin{itemize}
-
-\item[]<1->Now,since g being contraction is continuous, we have 
-$$p=\lim_{n\to\infty}x_{n}=\lim_{n\to\infty}g(x_{n-1})=g(lim_{n\to\infty}x_{n-1})=g(p)$$
- \\so that p is fixed point of g.
- \\By the lemma p is the unique fixed point of g.
- \item[]<2->Since $$\mid x_n-x_m\mid\le \frac{\lambda^m}{1-\lambda}\mid x_1-x_0\mid,$$
- \\letting n$\rightarrow\infty$
- \item[]<3->we get $$\mid p-x_m\mid\le \frac{\lambda^m}{1-\lambda}\mid x_1-x_0\mid$$ 
- \\for $y_0=x_{n-1},$ $y_1= x_n$
-$$\mid y_1- p\mid \le \frac{\lambda}{1-\lambda}\mid y_1-y_0\mid$$
- \end{itemize}
- \end{proof}
-\vskip 1cm
-
-\end{frame}
-
-\subsection{The Fixed Point Algorithm}
-
-\begin{frame}{The Fixed Point Algorithm}
-
-
-
-\begin{block}{The Fixed Point Algorithm}<1->
-
-
-If g has a fixed point p, then the fixed point algorithm generates a sequence $\left\{x_n\right\} $ defined as
-\\$x_0$: arbitrary but fixed,
-\\$x_n=g(x_{n-1})$, n=1,2,3,... to approximate p.
-\end{block}
-
-\end{frame}
-
-\subsection{Fixed Point The Case Where Multiple Derivatives Are Zero at The Fixed Point}
-\begin{frame}{Fixed Point The Case Where Multiple Derivatives Are Zero at The Fixed Point}
-\begin{block}{Theorem}
-\begin{itemize}
-
-\item[]<1->Let g be a continuous function on the closed internal $[a,b]$ with $\alpha>1$ continuous derivatives on the internal (a,b). 
-\\Further, Let p $\in $(a,b) be a fixed point of g. 
-\item[]<2->if $$g'(p)=g''(p)=...=g^{(\alpha-1)}(p)=0$$ but $g^{(\alpha)}(p)\neq 0$, 
-
-\item[]<3->then there exist a $\delta>0$ such that for any $p_0\in[p-\delta,p+\delta]$, the sequence $p_n=g(p_{n-1})$ converges to the fixed point p of order $\alpha$ with asymtotic error constant $$\lim_{n\to\infty}\frac{\mid e_{n+1}\mid}{\mid e_n\mid^\alpha}=\frac{\mid g^{(\alpha)}(p)\mid}{\alpha!}$$.
-
-\end{itemize}
-\end{block}
-\end{frame}
-
-
-\begin{frame}
-
-\begin{block}{Proof}
-\begin{itemize}
-
-
-\item[]<1->Let$'$s start by establishing the existence of $\delta>0$ such that for any $p_0\in [p-\delta,p+\delta]$, the sequence $p_n=g(p_{n-1})$ converges to the fixed point p.
-
-\item[]<2->Let $\lambda<1$. Since $g'(p)=0$ and $g'$ is continuous, it follows that there exists a $\delta>0$ such that$\mid g'(x)\mid\le \lambda<1$ for all $x\in I \equiv[p-\delta,p+\delta]$ From this, it follows that g:I$\rightarrow$I; for if x$\in$ I then,
-\item[]<3->
-\begin{align*}
-\mid g(x)-p\mid&=\mid g(x)-g(p)\mid\\
-&=\mid g'(\xi)\mid\mid x-p\mid\\
-&\le \lambda\mid x-p\mid<\mid x-p\mid\\
-&\le\delta
-\end{align*}
-\item[]<4->Therefore by the a fixed point theorem established earlier, the sequence $p_n=g(p_{n-1})$ converges to the fixed point p for any $p_0\in [p-\delta,p+\delta]$.
-
-\end{itemize}
-\end{block}
-
-\vskip 1cm
-
-\end{frame}
-
-
-
-\begin{frame}
-
-\begin{block}{Continue}
-\begin{itemize}
-
-
-\item[]<1->To establish the order of convergence, let x$\in$ I and expand the iteration function g into a Taylor series about x=p:
-$$g(x)=g(p)+g'(p)(x-p)+...+\frac{g^{\alpha-1}(p)}{(\alpha-1)!}(x-p)^{\alpha-1}+\frac{g^{\alpha}(\xi)}{(\alpha)!}(x-p)^{\alpha}$$ 
-\\where $\xi$ is between x and p. 
-\item[]<2->Using the hypotheses regarding the value of $g^{(k)}(p)$ for $1\le k\le \alpha-1$ and letting $x=p_n$, the Taylor series expansion simplifies to $$p_n+1-p=\frac{g^(\alpha)(\xi)}{\alpha!}(p_n-p)^\alpha$$
-\\where $\xi$ is now between $p_n$ and p.
-
-\end{itemize}
-\end{block}
-
-\vskip 1cm
-
-\end{frame}
-
-
-\begin{frame}
-
-\begin{proof}[Continue]
-\begin{itemize}
-\item[]<1->The definitions of fixed point iteration scheme and of a fixed point have been used to replace $g(p_n)$ with $p_{n+1}$ and g(p) with p.
-
- \item[]<2->Finally, let $n\rightarrow\infty$.Then $p_n\rightarrow p$, forcing $\xi\rightarrow$ p also.
-Hence $$\lim_{n\to\infty}\frac{\mid e_{n+1}\mid}{\mid e_n\mid^\alpha}=\frac{\mid g^{(\alpha)}(p)\mid}{\alpha!}$$
-\\or $p_n\rightarrow$ p of order $\alpha$.
-
-\end{itemize}
-\end{proof}
-
-
-\end{frame}
-\section{Steffensen's Acceleration Method}
-
-\subsection{Aitken's $\Delta^2$ Method}
-\begin{frame}
-
-\begin{theorem}[Aitken's $\Delta^2$ method]
-\begin{itemize}
-\item[] <1-> Suppose that
-\begin{itemize}
-	\item $\left\{x_{n}\right\}$ is a sequence with $x_{n}\neq$ p for all n $\in \mathbb{N}$ 
-	\item there is a constant c $\in \Re\setminus \left\{ \mp 1 \right\}$ and a sequece $\left\{ \delta_{n} \right\}$
-
-		such that 
-		\begin{itemize}
-			\item $\lim_{n\rightarrow\infty}\delta_{n}=0$
-			\item $x_{n+1}-p=(c+\delta_{n})(x_{n}-p)$ for all n $\in  \mathbb{N}$
-		\end{itemize}
-	\end{itemize}
-	\item[] <2->Then
-	
+\begin{frame}{Markov Model}
+	To model a life Insurance we need three ingredients:
 	\begin{itemize}
-		\item $\left\{x_{n}\right\}$ converges to p iff $\left|c\right|<1$
-		\item if $\left|c\right|<1$ , then 
-	\[ 
-	y_{n}=\frac{x_{n+2}x_{n}-x_{n+1}^2}{x_{n+2} - 2x_{n+1}+x_{n}}= x_n-\frac{(x_{n+1}-x_n)^2}{x_{n+2}-2x_{n+1}+x_n}
-	\] 
-		\end{itemize}
-		\      is well-defined for all sufficiently large n.
-		\item[]<3-> Moreover $\left\{y_{n}\right\}$ converges to p faster than $\left\{x_{n}\right\}$ in the sense that
-		\[ 
-		\lim_{n\rightarrow\infty} \frac{y_{n}-p}{x_{n}-p}=0
-		\]
- \end{itemize}
-
-\end{theorem}
-
-\vskip 1cm
-
+		\item a Markov chain $(X_t)_{t in \mathbb{N}}$
+		\item a one-year discount factor $v=\tfrac{1}{1+i}$
+		\item contract functions $a_{i}^{pre}(t)$ and $a_{ij}^{post}(t)$
+	\end{itemize}
+	\vskip 0.5cm
+	The starting point of an Markov model are the various possible conditions for an insured person, building the state space $\mathcal{S}$.
+	E.g. $\mathcal{S} = \{ \text{'living'}, \text{'death'}\}$.
 \end{frame}
 
-\begin{frame}
-\begin{proof}
-\begin{itemize}
-	\item[]<1-> Let $e_{n} = x_{n}-p$ 
-	\item[]<2-> $y_{n}-p=\frac{x_{n+2}x_{n}-x_{n+1}^2}{x_{n+2} - 2x_{n+1}+x_{n}}-p$
-	\item[]<3-> $y_{n}-p$=$\frac{(e_{n+2}+p)(e_{n}+p)-(e_{n+1}+p)^2}{(e_{n+2}+p)-2(e_{n+1}+p)+(e_{n}+p)}$
-	\item[]<4-> $y_{n}-p$=$\frac{e_{n+2}e_{n}-e_{n}^2}{e_{n+2}-2e_{n+1}+e_{n}}$
-	\item[]<5-> since we have
-	\item[]<5-> $x_{n+1}-p= (c+\delta_{n})(x_{n}-p)$ 
-	\ and $e_{n+1}=(c+\delta_{n}e_{n})$
-	\item[]<6-> $y_{n}-p$=$\frac{(c+\delta_{n+1})(c+\delta_{n})e_{n}e_{n}-(c+\delta_{n})^2e_{n}^2}{(c+\delta_{n+1})(c+\delta_{n})e_{n}-2(c+\delta_{n})e_{n}+e_{n}}$
-	\item[]<7-> $y_{n}-p$=$\frac{(c+\delta_{n+1})(c+\delta_{n})-(c+\delta_{n})^2}{(c+\delta_{n+1})(c+\delta_{n})-2(c+\delta_{n})+1}$ $(x_{n}-p)$
-	\item[]<8-> $y_{n}-p$=$\frac{(c+\delta_{n})(\delta_{n+1}-\delta_{n})}{(c-1)^+c(\delta_{n+1}+\delta_{n})+\delta_{n}(\delta_{n+1}-2)}$
-	\item[]<9-> Therefore $\lim_{n\rightarrow\infty} \frac{y_{n}-p}{x_{n}-p}=0$
-\end{itemize}
-\end{proof}
 
+\begin{frame}{Induced Cashflow \& Mathemtical Reserve}
+	
 \end{frame}
-\subsection{Steffensen's Acceleration Method}
-\begin{frame}
-\begin{block}{Steffensen's Acceleration Method}
-\begin{itemize}
 
 
-
-\item[]<1->Steffensen’s Method is a combination of fixed-point iteration and the Aitken’s $\Delta^2$ method: 
-
-	\item[]<2->Suppose we have a fixed point iteration: $$x_0,x_1=g(x_0),x_2=g(x_1),...$$
-	\item[]<3->Once we have $x_0, x_1,$ and $x_2,$ we can compute $$ y_0=x_0-\frac{(x_1-x_0)^2}{x_2-2x_1+x_0}$$ 
-At this point we "restart" the fixed point iteration with $x_0=y_0$
-	\item[]<4->e.g.\color{brown} $$x_3=y_0, x_4=g(x_3), x_5=g(x_4),$$\color{black}
-and compute \color{brown} $$y_3=x_3-\frac{(x_4-x_3)^2}{x_5-2x_4+x_3}$$ \color{black}
-
-\end{itemize}
-
-\end{block}
+\begin{frame}{Thiele Equation}
+	\begin{block}{Theorem (Thiele's differennce equation)}
+		The mathematical reserve between two subsequent periods are related by:
+		\begin{equation*}
+			V_i(t) = a_{i}^{pre}(t) + \sum_{j \in \mathcal{S}} v \cdot p_{ij}(t,t+1) \cdot (a_{ij}^{post}(t) + V_j(t+1))
+		\end{equation*}
+	\end{block}	
 \end{frame}
-\section{Comparison With Fixed point iteration and Steffensen's Acceleration Method}
-\begin{frame}{Comparison with Fixed Point Iteration and Steffensen's Acceleration Method}
-\begin{block}{EXAMPLE}
-\begin{itemize}
 
+% \begin{frame}{Fixed Point Iteration Method}
 
-\item[]<1-> Use the Fixed Point iteration method to find a solution to $f(x) = x^2-2x-3$ using $x_0=0$, tolerance =$10^{-1}$ and compare the approximations with those given by Steffensen's Acceleration method with $x_0=0$, tolerance = $10^{-2}$.
-\item<2-> We can see that my MATLAB code while  Fixed Point iteration method reaches the root by 788 iteration, Steffensen's Acceleration method reaches the root by only 3 iterations. 
-\end{itemize}
+%   \begin{block}{Definition}<1->
+% A point p is a \textbf{fixed point} for a given function g if g(p)= p.
+% \end{block}
+%  \begin{block}{Remark}<2->
+%  Fixed point problems and root finding problems are infact equivalent.
+%  \begin{itemize}
+% \item<1->if p is a fixed point of the function g, then p is a root of the function
+% $$f(x)=[g(x)-x]h(x)$$ [as long as $h(x)\in \mathbb{R}$]
+% \item<2->if p is a root of the function of f, then p is a fixed point of the function 
+% $$g(x)=x-h(x)f(x)$$ [as long as $h(x)\in \mathbb{R}$]
+% \end{itemize}
+% \end{block}
+%  \end{frame}
 
-\end{block}
+\section{Task 2 : Stopping to pay Premium}
 
+\begin{frame}{Mathemical Reserves}
+	
+	Mathematical Reserves at given time = PV(future benefits) - PV(future premiums)\\
+	\vskip 0.5cm
+	Expressed in commutation functions:
+	\begin{equation*}
+		\prescript{}{t}{V}_x = \frac{M_{x+t} - M_{x+n} + D_{x+n} - \Pi\cdot (N_{x+t} - N_{x+n})}{D_{x+t}}
+	\end{equation*}
 \end{frame}
+
+
+\begin{frame}{}
+	
+\end{frame}
+
+
+
+
+
+\section{Disability Insurance on two lives}
+
+\begin{frame}{Problem}
+	
+\end{frame}
+
+
+
+%  \begin{frame}{Fixed Point Iteration Method}
+
+%  \begin{block}{Definition}<1->
+% Let U be a subset of a metric space X.
+% \\A function g:U $\rightarrow$X called \textbf{Lipschitz continuous} provided there exists a constant $\lambda\ge$ 0 (called Lipschitz constant)
+% \\such that $\forall$ x,y$\in$U d(g(x),g(y))$\le$d(x,y)
+% \\if $\lambda\in$[0,1], then g is called \textbf{contraction} (with contraction constant $\lambda$).
+% \end{block} 
+%  \begin{block}{Theorem (A Fixed Point Theorem)}<2->
+%  Suppose $g:[a,b]\rightarrow[a,b]$ is continuous. Then g has a fixed point.
+ 
+
+% \end{block}
+% \end{frame}
+%  \begin{frame}{Fixed Point Iteration Method}
+% \begin{block}{Lemma}<1->
+%  A contraction has at most one fixed point.
+ 
+
+% \end{block}
+% \begin{block}{Corollary}<2->
+% Suppose $g:[a,b]\rightarrow[a,b]$ is continuous and $\lambda:=sup\mid g'(x)\mid<1$ for $x\in (a,b)$
+% \\Then g is a contraction with contraction constant $\lambda.$
+% \end{block}
+% \vskip 1cm
+
+% \end{frame}
+
+% \begin{frame}{Graphical determination of the existence of a fixed point for the function $g(x)= \frac{x^2-3}{2}$}
+
+% \includegraphics[width=355px, height= 200px]{Figure2.jpg}
+% \end{frame}
+
+
+
+% \subsection{Banach Fixed Point Theorem}
+
+% \begin{frame}{Banach Fixed Point Theorem}
+
+% \begin{theorem}[Banach Fixed Point Theorem]
+%   \begin{itemize}
+
+
+%  \item[]<1-> Let U be a complete subset of a metric space X, and let g:U$\rightarrow$U be a contraction with contraction constant $\lambda$.
+%   \\Then  \begin{itemize}
+%     \item<2-> g has a unique fixed point, say p.
+%     \item<2->For any sequence $\left\{x_{n}\right\}$ defined by $x_n$=g($x_{n-1}$), n=1,2,,...
+%     \\converges to this unique fixed point p.
+%     \item[]<3->Moreover, we have the  \textbf{a priori} error estimate
+%     $$ \mid x_n-p\mid\le\frac{\lambda^n}{1-\lambda}\mid x_1-x_0\mid$$
+%     \item[]<4->and the \textbf{a posteriori} error estimate 
+%       $$\mid x_n-p\mid\le\frac{\lambda}{1-\lambda}\mid x_n-x_{n-1}\mid$$
+% \end{itemize}
+% \end{itemize}  
+% \end{theorem}
+% \vskip 1cm
+
+
+% \end{frame}
+
+
+% \begin{frame}{Banach Fixed Point Theorem}
+
+% \begin{block}{Proof}
+
+% For $n > m$ , we have
+% \begin{align*}
+% \mid x_n-x_m\mid&=\mid x_n-x_{n-1}+x_{n-1}-x_{n-2}+...+x_{m+1}-x_{m}\mid\\
+% &\le\mid x_n-x_{n-1}\mid + \mid x_{n-1}-x_{n-2}\mid+...+\mid x_{m+1}-x_{m}\mid\\
+% &by  *\\
+% &\le(\lambda^{n-1}+\lambda^{n-2}+...+\lambda^{m})\mid x_1-x_0\mid\\
+% &=\lambda^{m}(\lambda^{n-m-1}+\lambda^{n-m-2}+...+1)\mid x_1-x_0\mid\\
+% &=\lambda^{m}\frac{1-\lambda^{n-m}}{1-\lambda}\mid x_1-x_0\mid\le \frac{\lambda^m}{1-\lambda}\mid x_1-x_0\mid
+%  \end{align*}
+ 
+%  so that ${x_n}$ is Cauchy sequence in U.
+%  \\Since U is complete, ${x_n}$ converges to a point p $\in$ U
+% $$*\color{red}\mid x_k-x_{k-1}\mid=\mid g(x_{k-1})-g(x_{k-2})\mid\le\lambda\mid x_{k-1}-x_{k-2}\mid\le..\le\lambda^{k-1}\mid x_1-x_0\mid\color{black}$$
+
+% \end{block}
+
+% \vskip 1cm
+
+% \end{frame}
+
+
+% \begin{frame}
+% \begin{proof}[Continue]
+% \begin{itemize}
+
+% \item[]<1->Now,since g being contraction is continuous, we have 
+% $$p=\lim_{n\to\infty}x_{n}=\lim_{n\to\infty}g(x_{n-1})=g(lim_{n\to\infty}x_{n-1})=g(p)$$
+%  \\so that p is fixed point of g.
+%  \\By the lemma p is the unique fixed point of g.
+%  \item[]<2->Since $$\mid x_n-x_m\mid\le \frac{\lambda^m}{1-\lambda}\mid x_1-x_0\mid,$$
+%  \\letting n$\rightarrow\infty$
+%  \item[]<3->we get $$\mid p-x_m\mid\le \frac{\lambda^m}{1-\lambda}\mid x_1-x_0\mid$$ 
+%  \\for $y_0=x_{n-1},$ $y_1= x_n$
+% $$\mid y_1- p\mid \le \frac{\lambda}{1-\lambda}\mid y_1-y_0\mid$$
+%  \end{itemize}
+%  \end{proof}
+% \vskip 1cm
+
+% \end{frame}
+
+% \subsection{The Fixed Point Algorithm}
+
+% \begin{frame}{The Fixed Point Algorithm}
+
+
+
+% \begin{block}{The Fixed Point Algorithm}<1->
+
+
+% If g has a fixed point p, then the fixed point algorithm generates a sequence $\left\{x_n\right\} $ defined as
+% \\$x_0$: arbitrary but fixed,
+% \\$x_n=g(x_{n-1})$, n=1,2,3,... to approximate p.
+% \end{block}
+
+% \end{frame}
+
+% \subsection{Fixed Point The Case Where Multiple Derivatives Are Zero at The Fixed Point}
+% \begin{frame}{Fixed Point The Case Where Multiple Derivatives Are Zero at The Fixed Point}
+% \begin{block}{Theorem}
+% \begin{itemize}
+
+% \item[]<1->Let g be a continuous function on the closed internal $[a,b]$ with $\alpha>1$ continuous derivatives on the internal (a,b). 
+% \\Further, Let p $\in $(a,b) be a fixed point of g. 
+% \item[]<2->if $$g'(p)=g''(p)=...=g^{(\alpha-1)}(p)=0$$ but $g^{(\alpha)}(p)\neq 0$, 
+
+% \item[]<3->then there exist a $\delta>0$ such that for any $p_0\in[p-\delta,p+\delta]$, the sequence $p_n=g(p_{n-1})$ converges to the fixed point p of order $\alpha$ with asymtotic error constant $$\lim_{n\to\infty}\frac{\mid e_{n+1}\mid}{\mid e_n\mid^\alpha}=\frac{\mid g^{(\alpha)}(p)\mid}{\alpha!}$$.
+
+% \end{itemize}
+% \end{block}
+% \end{frame}
+
+
+% \begin{frame}
+
+% \begin{block}{Proof}
+% \begin{itemize}
+
+
+% \item[]<1->Let$'$s start by establishing the existence of $\delta>0$ such that for any $p_0\in [p-\delta,p+\delta]$, the sequence $p_n=g(p_{n-1})$ converges to the fixed point p.
+
+% \item[]<2->Let $\lambda<1$. Since $g'(p)=0$ and $g'$ is continuous, it follows that there exists a $\delta>0$ such that$\mid g'(x)\mid\le \lambda<1$ for all $x\in I \equiv[p-\delta,p+\delta]$ From this, it follows that g:I$\rightarrow$I; for if x$\in$ I then,
+% \item[]<3->
+% \begin{align*}
+% \mid g(x)-p\mid&=\mid g(x)-g(p)\mid\\
+% &=\mid g'(\xi)\mid\mid x-p\mid\\
+% &\le \lambda\mid x-p\mid<\mid x-p\mid\\
+% &\le\delta
+% \end{align*}
+% \item[]<4->Therefore by the a fixed point theorem established earlier, the sequence $p_n=g(p_{n-1})$ converges to the fixed point p for any $p_0\in [p-\delta,p+\delta]$.
+
+% \end{itemize}
+% \end{block}
+
+% \vskip 1cm
+
+% \end{frame}
+
+
+
+% \begin{frame}
+
+% \begin{block}{Continue}
+% \begin{itemize}
+
+
+% \item[]<1->To establish the order of convergence, let x$\in$ I and expand the iteration function g into a Taylor series about x=p:
+% $$g(x)=g(p)+g'(p)(x-p)+...+\frac{g^{\alpha-1}(p)}{(\alpha-1)!}(x-p)^{\alpha-1}+\frac{g^{\alpha}(\xi)}{(\alpha)!}(x-p)^{\alpha}$$ 
+% \\where $\xi$ is between x and p. 
+% \item[]<2->Using the hypotheses regarding the value of $g^{(k)}(p)$ for $1\le k\le \alpha-1$ and letting $x=p_n$, the Taylor series expansion simplifies to $$p_n+1-p=\frac{g^(\alpha)(\xi)}{\alpha!}(p_n-p)^\alpha$$
+% \\where $\xi$ is now between $p_n$ and p.
+
+% \end{itemize}
+% \end{block}
+
+% \vskip 1cm
+
+% \end{frame}
+
+
+% \begin{frame}
+
+% \begin{proof}[Continue]
+% \begin{itemize}
+% \item[]<1->The definitions of fixed point iteration scheme and of a fixed point have been used to replace $g(p_n)$ with $p_{n+1}$ and g(p) with p.
+
+%  \item[]<2->Finally, let $n\rightarrow\infty$.Then $p_n\rightarrow p$, forcing $\xi\rightarrow$ p also.
+% Hence $$\lim_{n\to\infty}\frac{\mid e_{n+1}\mid}{\mid e_n\mid^\alpha}=\frac{\mid g^{(\alpha)}(p)\mid}{\alpha!}$$
+% \\or $p_n\rightarrow$ p of order $\alpha$.
+
+% \end{itemize}
+% \end{proof}
+
+
+% \end{frame}
+% \section{Steffensen's Acceleration Method}
+
+% \subsection{Aitken's $\Delta^2$ Method}
+% \begin{frame}
+
+% \begin{theorem}[Aitken's $\Delta^2$ method]
+% \begin{itemize}
+% \item[] <1-> Suppose that
+% \begin{itemize}
+% 	\item $\left\{x_{n}\right\}$ is a sequence with $x_{n}\neq$ p for all n $\in \mathbb{N}$ 
+% 	\item there is a constant c $\in \Re\setminus \left\{ \mp 1 \right\}$ and a sequece $\left\{ \delta_{n} \right\}$
+
+% 		such that 
+% 		\begin{itemize}
+% 			\item $\lim_{n\rightarrow\infty}\delta_{n}=0$
+% 			\item $x_{n+1}-p=(c+\delta_{n})(x_{n}-p)$ for all n $\in  \mathbb{N}$
+% 		\end{itemize}
+% 	\end{itemize}
+% 	\item[] <2->Then
+	
+% 	\begin{itemize}
+% 		\item $\left\{x_{n}\right\}$ converges to p iff $\left|c\right|<1$
+% 		\item if $\left|c\right|<1$ , then 
+% 	\[ 
+% 	y_{n}=\frac{x_{n+2}x_{n}-x_{n+1}^2}{x_{n+2} - 2x_{n+1}+x_{n}}= x_n-\frac{(x_{n+1}-x_n)^2}{x_{n+2}-2x_{n+1}+x_n}
+% 	\] 
+% 		\end{itemize}
+% 		\      is well-defined for all sufficiently large n.
+% 		\item[]<3-> Moreover $\left\{y_{n}\right\}$ converges to p faster than $\left\{x_{n}\right\}$ in the sense that
+% 		\[ 
+% 		\lim_{n\rightarrow\infty} \frac{y_{n}-p}{x_{n}-p}=0
+% 		\]
+%  \end{itemize}
+
+% \end{theorem}
+
+% \vskip 1cm
+
+% \end{frame}
+
+% \begin{frame}
+% \begin{proof}
+% \begin{itemize}
+% 	\item[]<1-> Let $e_{n} = x_{n}-p$ 
+% 	\item[]<2-> $y_{n}-p=\frac{x_{n+2}x_{n}-x_{n+1}^2}{x_{n+2} - 2x_{n+1}+x_{n}}-p$
+% 	\item[]<3-> $y_{n}-p$=$\frac{(e_{n+2}+p)(e_{n}+p)-(e_{n+1}+p)^2}{(e_{n+2}+p)-2(e_{n+1}+p)+(e_{n}+p)}$
+% 	\item[]<4-> $y_{n}-p$=$\frac{e_{n+2}e_{n}-e_{n}^2}{e_{n+2}-2e_{n+1}+e_{n}}$
+% 	\item[]<5-> since we have
+% 	\item[]<5-> $x_{n+1}-p= (c+\delta_{n})(x_{n}-p)$ 
+% 	\ and $e_{n+1}=(c+\delta_{n}e_{n})$
+% 	\item[]<6-> $y_{n}-p$=$\frac{(c+\delta_{n+1})(c+\delta_{n})e_{n}e_{n}-(c+\delta_{n})^2e_{n}^2}{(c+\delta_{n+1})(c+\delta_{n})e_{n}-2(c+\delta_{n})e_{n}+e_{n}}$
+% 	\item[]<7-> $y_{n}-p$=$\frac{(c+\delta_{n+1})(c+\delta_{n})-(c+\delta_{n})^2}{(c+\delta_{n+1})(c+\delta_{n})-2(c+\delta_{n})+1}$ $(x_{n}-p)$
+% 	\item[]<8-> $y_{n}-p$=$\frac{(c+\delta_{n})(\delta_{n+1}-\delta_{n})}{(c-1)^+c(\delta_{n+1}+\delta_{n})+\delta_{n}(\delta_{n+1}-2)}$
+% 	\item[]<9-> Therefore $\lim_{n\rightarrow\infty} \frac{y_{n}-p}{x_{n}-p}=0$
+% \end{itemize}
+% \end{proof}
+
+% \end{frame}
+% \subsection{Steffensen's Acceleration Method}
+% \begin{frame}
+% \begin{block}{Steffensen's Acceleration Method}
+% \begin{itemize}
+
+
+
+% \item[]<1->Steffensen’s Method is a combination of fixed-point iteration and the Aitken’s $\Delta^2$ method: 
+
+% 	\item[]<2->Suppose we have a fixed point iteration: $$x_0,x_1=g(x_0),x_2=g(x_1),...$$
+% 	\item[]<3->Once we have $x_0, x_1,$ and $x_2,$ we can compute $$ y_0=x_0-\frac{(x_1-x_0)^2}{x_2-2x_1+x_0}$$ 
+% At this point we "restart" the fixed point iteration with $x_0=y_0$
+% 	\item[]<4->e.g.\color{brown} $$x_3=y_0, x_4=g(x_3), x_5=g(x_4),$$\color{black}
+% and compute \color{brown} $$y_3=x_3-\frac{(x_4-x_3)^2}{x_5-2x_4+x_3}$$ \color{black}
+
+% \end{itemize}
+
+% \end{block}
+% \end{frame}
+% \section{Comparison With Fixed point iteration and Steffensen's Acceleration Method}
+% \begin{frame}{Comparison with Fixed Point Iteration and Steffensen's Acceleration Method}
+% \begin{block}{EXAMPLE}
+% \begin{itemize}
+
+
+% \item[]<1-> Use the Fixed Point iteration method to find a solution to $f(x) = x^2-2x-3$ using $x_0=0$, tolerance =$10^{-1}$ and compare the approximations with those given by Steffensen's Acceleration method with $x_0=0$, tolerance = $10^{-2}$.
+% \item<2-> We can see that my MATLAB code while  Fixed Point iteration method reaches the root by 788 iteration, Steffensen's Acceleration method reaches the root by only 3 iterations. 
+% \end{itemize}
+
+% \end{block}
+
+% \end{frame}
 
 
 

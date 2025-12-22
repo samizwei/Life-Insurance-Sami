@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.25)  21 DEC 2025 20:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.25)  22 DEC 2025 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -127,8 +127,8 @@ Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 \pgfmath@stack@operation=\toks25
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count288
-))) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+))) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
@@ -1005,31 +1005,59 @@ Now handling font encoding PU ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
    defining Unicode char U+FEFF (decimal 65279)
-))) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+))) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count339
+\calc@Bcount=\count340
+\calc@Adimen=\dimen295
+\calc@Bdimen=\dimen296
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count341
+\calc@Cskip=\skip67
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count342
+\l_MT_multwidth_dim=\dimen297
+\origjot=\skip68
+\l_MT_shortvdotswithinadjustabove_dim=\dimen298
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen299
+\l_MT_above_intertext_sep=\dimen300
+\l_MT_below_intertext_sep=\dimen301
+\l_MT_above_shortintertext_sep=\dimen302
+\l_MT_below_shortintertext_sep=\dimen303
+\xmathstrut@box=\box76
+\xmathstrut@dim=\dimen304
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count339
-\l__pdf_internal_box=\box76
+\l__color_backend_stack_int=\count343
+\l__pdf_internal_box=\box77
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1050,12 +1078,12 @@ LaTeX Font Info:    ... okay on input line 20.
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=14.22636pt
-* \marginparwidth=4.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1067,83 +1095,77 @@ LaTeX Font Info:    ... okay on input line 20.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count340
-\scratchdimen=\dimen295
-\scratchbox=\box77
-\nofMPsegments=\count341
-\nofMParguments=\count342
+\scratchcounter=\count344
+\scratchdimen=\dimen305
+\scratchbox=\box78
+\nofMPsegments=\count345
+\nofMParguments=\count346
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count343
-\MPscratchDim=\dimen296
-\MPnumerator=\count344
-\makeMPintoPDFobject=\count345
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen306
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
 \everyMPtoPDFconversion=\toks49
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
- (/usr/local/texlive/2024/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 25.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 20.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 25.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 20.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 25.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 20.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 20.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 20.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 20.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 25.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 20.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 20.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 20.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 25.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 20.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 20.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 20.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 25.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 20.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 20.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 25.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 20.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 25.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 20.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 20.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 20.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 20.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 20.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 25.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 20.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 20.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 25.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 25.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 20.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 25.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 20.
+(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 25.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 20.
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 25.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -1156,665 +1178,47 @@ Dictionary: translator-months-dictionary, Language: English
 Dictionary: translator-numbers-dictionary, Language: English 
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./main.nav)
-Overfull \hbox (25.82416pt too wide) detected at line 20
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
+) (./main.nav) [1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-
-Overfull \hbox (25.82416pt too wide) detected at line 24
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+] (./main.toc) [2
 
 ]
-Overfull \hbox (25.82416pt too wide) detected at line 29
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
+<Example_Markov.png, id=141, 393.47pt x 377.41pt>
+File: Example_Markov.png Graphic file (type png)
+<use Example_Markov.png>
+Package pdftex.def Info: Example_Markov.png  used on input line 48.
+(pdftex.def)             Requested size: 153.64493pt x 147.37358pt.
+ [3
 
-(./main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+ <./Example_Markov.png>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 7.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 60.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
-)) [2
+) [4
 
-]
-Overfull \hbox (25.82416pt too wide) detected at line 39
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
+] [5
 
+] [6
 
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
+] [7
 
-[3
+] [8
 
-]
-Overfull \hbox (25.82416pt too wide) detected at line 44
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
+] [9
 
+] [10
 
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
+] [11
 
-[4
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 49
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[5
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 65
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \vbox (7.54312pt too high) detected at line 65
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[6
-
-]
-Overfull \vbox (7.54312pt too high) detected at line 65
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[7
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 79
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[8
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[9
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 92
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[10
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[11
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 97
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-<Figure2.jpg, id=732, 563.10374pt x 421.575pt>
-File: Figure2.jpg Graphic file (type jpg)
-<use Figure2.jpg>
-Package pdftex.def Info: Figure2.jpg  used on input line 97.
-(pdftex.def)             Requested size: 356.32962pt x 200.75195pt.
-
-Overfull \hbox (49.03975pt too wide) in paragraph at lines 97--97
-[][]  
- []
-
-
-Overfull \vbox (4.62755pt too high) detected at line 97
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[12
-
- <./Figure2.jpg>]
-Overfull \hbox (25.82416pt too wide) detected at line 124
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 124.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/b/it' undefined
-(Font)              using `OT1/cmss/b/n' instead on input line 124.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 124.
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 124.
-
-LaTeX Font Info:    Font shape `OT1/cmss/b/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 124.
-
-Overfull \vbox (28.16522pt too high) detected at line 124
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[13
-
-]
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 124.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 124.
-
-
-Overfull \vbox (28.16522pt too high) detected at line 124
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[14
-
-]
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 124.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 124.
-
-
-Overfull \vbox (28.16522pt too high) detected at line 124
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[15
-
-]
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 124.
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 124.
-
-
-Overfull \vbox (28.16522pt too high) detected at line 124
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[16
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 149
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (37.75108pt too wide) detected at line 149
-\OMS/cmsy/m/n/10.95 ^^C[] j \OT1/mathkerncmss/m/sl/10.95 x[] \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 x[] \OMS/cmsy/m/n/10.95 j\OT1/cmss/m/n/10.95 =\OMS/cmsy/m/n/10.95 j \OT1/mathkerncmss/m/sl/10.95 g\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 x[]\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 g\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 x[]\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 j^^T \OML/cmm/m/it/10.95 ^^U \OMS/cmsy/m/n/10.95 j \OT1/mathkerncmss/m/sl/10.95 x[] \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 x[] \OMS/cmsy/m/n/10.95 j^^T \OML/cmm/m/it/10.95 :: \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 ^^U[] \OMS/cmsy/m/n/10.95 j \OT1/mathkerncmss/m/sl/10.95 x[] \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 x[] \OMS/cmsy/m/n/10.95 j[]
- []
-
-
-Overfull \vbox (58.39925pt too high) detected at line 149
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[17
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 169
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \vbox (73.6348pt too high) detected at line 169
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[18
-
-]
-Overfull \vbox (73.6348pt too high) detected at line 169
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[19
-
-]
-Overfull \vbox (73.6348pt too high) detected at line 169
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[20
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 185
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[21
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 200
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \vbox (17.34041pt too high) detected at line 200
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[22
-
-]
-Overfull \vbox (17.34041pt too high) detected at line 200
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[23
-
-]
-Overfull \vbox (17.34041pt too high) detected at line 200
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[24
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 226
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \vbox (54.02078pt too high) detected at line 226
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[25
-
-]
-Overfull \vbox (54.02078pt too high) detected at line 226
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[26
-
-]
-Overfull \vbox (54.02078pt too high) detected at line 226
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[27
-
-]
-Overfull \vbox (54.02078pt too high) detected at line 226
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[28
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 247
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (18.5664pt too wide) detected at line 247
-\OT1/mathkerncmss/m/sl/10.95 g\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 x\OT1/cmss/m/n/10.95 ) = \OT1/mathkerncmss/m/sl/10.95 g\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 ) + \OT1/mathkerncmss/m/sl/10.95 g[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 )(\OT1/mathkerncmss/m/sl/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 ) + \OML/cmm/m/it/10.95 ::: \OT1/cmss/m/n/10.95 + [](\OT1/mathkerncmss/m/sl/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 )[] + [](\OT1/mathkerncmss/m/sl/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 )[]
- []
-
-
-Overfull \vbox (1.83769pt too high) detected at line 247
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[29
-
-]
-Overfull \hbox (18.5664pt too wide) detected at line 247
-\OT1/mathkerncmss/m/sl/10.95 g\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 x\OT1/cmss/m/n/10.95 ) = \OT1/mathkerncmss/m/sl/10.95 g\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 ) + \OT1/mathkerncmss/m/sl/10.95 g[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 )(\OT1/mathkerncmss/m/sl/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 ) + \OML/cmm/m/it/10.95 ::: \OT1/cmss/m/n/10.95 + [](\OT1/mathkerncmss/m/sl/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 )[] + [](\OT1/mathkerncmss/m/sl/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 )[]
- []
-
-
-Overfull \vbox (1.83769pt too high) detected at line 247
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[30
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 264
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[31
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[32
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 267.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Delta' on input line 267.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 267.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 267.
-
-
-Overfull \hbox (25.82416pt too wide) detected at line 303
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \vbox (51.23091pt too high) detected at line 303
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[33
-
-]
-Overfull \vbox (51.23091pt too high) detected at line 303
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[34
-
-]
-Overfull \vbox (51.23091pt too high) detected at line 303
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[35
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 322
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[36
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[37
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[38
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[39
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[40
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[41
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[42
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[43
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[44
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 341
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \vbox (37.2955pt too high) detected at line 341
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[45
-
-]
-Overfull \vbox (37.2955pt too high) detected at line 341
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[46
-
-]
-Overfull \vbox (37.2955pt too high) detected at line 341
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[47
-
-]
-Overfull \vbox (37.2955pt too high) detected at line 341
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[48
-
-]
-Overfull \hbox (25.82416pt too wide) detected at line 354
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[49
-
-]
-Overfull \hbox (25.82416pt too wide) has occurred while \output is active
-  [] [][][][][][][][][][][][][][][][] [][][][] [][]  
- []
-
-[50
+] [12
 
 ]
 \tf@nav=\write6
@@ -1831,26 +1235,22 @@ Overfull \hbox (25.82416pt too wide) has occurred while \output is active
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 29B6D0A2117C1008D46C77F0BD3C8284;1983.
+(rerunfilecheck)             Checksum: 3E595F16B4775FFD05B8BDFC94C95656;547.
  ) 
 Here is how much of TeX's memory you used:
- 23241 strings out of 474116
- 456151 string characters out of 5743681
- 1972187 words of memory out of 5000000
- 44988 multiletter control sequences out of 15000+600000
- 575343 words of font info for 97 fonts, out of 8000000 for 9000
+ 23481 strings out of 474116
+ 458250 string characters out of 5743681
+ 1947187 words of memory out of 5000000
+ 45318 multiletter control sequences out of 15000+600000
+ 563633 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,20n,123p,622b,1020s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (50 pages, 388131 bytes).
+ 128i,20n,123p,487b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on main.pdf (12 pages, 283655 bytes).
 PDF statistics:
- 2604 PDF objects out of 2984 (max. 8388607)
- 1710 compressed objects within 18 object streams
- 109 named destinations out of 1000 (max. 500000)
- 1816 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 549 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 300 words of extra memory for PDF output out of 10000 (max. 10000000)
 
