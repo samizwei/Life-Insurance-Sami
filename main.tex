@@ -12,6 +12,7 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{mathtools}
+\usepackage{bbm}
 
 % \usepackage{amsfonts}
 % \usepackage{amsmath}
@@ -37,7 +38,7 @@
 %  \tableofcontents
 %\end{frame}
 
-\section{Markov Model}
+\section{Task 1: Markov Model}
 
 \begin{frame}{Markov Chains}
 	What is a Markov Chain?\\
@@ -102,17 +103,51 @@
 
 
 \begin{frame}{Induced Cashflow \& Mathemtical Reserve}
-	
+	A central task in life insurance is the determination of the actuarial reserve, i.e.,
+	the amount of money which has to be set aside at a given time t to be able to meet
+	all future obligations/benefits towards each policy.\\
+	We denote by $A_t$ the payments that are due for a policy at time t.
+	$(A_t)_{t \in \mathbb{N}}$ is a stochastic process.
+	\begin{equation*}
+		A_t = a_{X_t}^{Pre}(t) + a_{X_{t-1} X_{t}}^{Post}(t)
+	\end{equation*}
+	where $a_{ij}^{Post}(-1)=0$ for all i,j $\in \mathcal{S}$, $t\in \mathbb{N}$.
+
 \end{frame}
 
 
+\begin{frame}{Induced Cashflow \& Mathemtical Reserve}
+	We set $I_i(t) = \mathbbm{1}_{\{X_t = i\}}$. Then we can compute the {\bfseries induced cash flows} as follows:
+	\begin{equation*}
+		A(t) = \underbrace{\sum\limits_{i \in \mathcal{S}} I_i(t) \cdot a_{i}^{pre}(t)}_{\text{annuity}} + 
+		\underbrace{\sum\limits_{i,j \in \mathcal{S}}  I_i(t) \cdot I_j(t+1) \cdot a_{ij}^{post}(t)}_{\text{captial/lump sum paid at time t+1}}
+	\end{equation*}
+	Idea: $A(t)$ are the payments are due at time t for a given policy. We can also compute the present value (PV) of A(t) which is given by:
+	\begin{equation*}
+		\tilde{A}(t) = \sum\limits_{i \in \mathcal{S}} I_i(t) \cdot a_{i}^{pre}(t) + v \cdot \sum\limits_{i,j \in \mathcal{S}}  I_i(t) \cdot I_j(t+1) \cdot a_{ij}^{post}(t)
+	\end{equation*}
+	Finally we can define the mathematical reserve at time t as:
+	\begin{align*}
+		V_j(t) = \mathbb{E}[\text{PV of future cash flows} | X_t=j] = \mathbb{E}[\sum\limits_{\tau=t}^{\infty} \tilde{A}(t + \tau) | X_t=j]
+	\end{align*}
+
+\end{frame}
+
+
+
+
 \begin{frame}{Thiele Equation}
-	\begin{block}{Theorem (Thiele's differennce equation)}
+	\begin{block}{Theorem (Thiele's difference equation)}
 		The mathematical reserve between two subsequent periods are related by:
 		\begin{equation*}
 			V_i(t) = a_{i}^{pre}(t) + \sum_{j \in \mathcal{S}} v \cdot p_{ij}(t,t+1) \cdot (a_{ij}^{post}(t) + V_j(t+1))
 		\end{equation*}
 	\end{block}	
+\end{frame}
+
+\begin{frame}{Thiele Equation}
+	{\bfseries Proof.}
+	We start 
 \end{frame}
 
 % \begin{frame}{Fixed Point Iteration Method}
@@ -152,11 +187,16 @@
 
 
 
-\section{Disability Insurance on two lives}
+\section{Task 3: Disability Insurance on two lives}
 
 \begin{frame}{Problem}
 	
 \end{frame}
+
+
+\section{Appendix}
+
+
 
 
 
