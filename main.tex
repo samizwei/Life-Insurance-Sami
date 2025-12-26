@@ -128,9 +128,22 @@
 	\end{equation*}
 	Finally we can define the mathematical reserve at time t as:
 	\begin{align*}
-		V_j(t) = \mathbb{E}[\text{PV of future cash flows} | X_t=j] = \mathbb{E}[\sum\limits_{\tau=t}^{\infty} \tilde{A}(t + \tau) | X_t=j]
+		V_j(t) = \mathbb{E}[\text{PV of future cash flows} | X_t=j] = \mathbb{E}[\sum\limits_{\tau=0}^{\infty} \tilde{A}(t + \tau) | X_t=j]
 	\end{align*}
+\end{frame}
 
+
+\begin{frame}{Mathematical Reserve}
+	We can compute the mathematical reserves with the following results:
+	\begin{align*}
+		\mathbb{E}[I_i(t+\tau) | X_t=j] &= p_{ji}(t,t+\tau) \\
+		\mathbb{E}[I_i(t+\tau)\,I_k(t+\tau + 1) | X_t=j] &= p_{ji}(t,t+\tau) p_{ik}(t+\tau,t+\tau + 1)
+	\end{align*}
+	\vskip 0.5cm
+	Hence the reserve is given as:
+	\begin{align*}
+		V_j(t) = \sum\limits_{\tau=0}^{\infty} 
+	\end{align*}
 \end{frame}
 
 
