@@ -224,7 +224,10 @@
 \section{Task 2 : Stopping to pay Premium}
 
 \begin{frame}{Set Up}
-	
+	\begin{itemize}
+		\item Consider a mixed endowment $A_{80:\overline{10}|}$ maturing at age 90 with benefit insured $L=100'000$.
+		\item Techinical interest rate $i=2\%$ and Preimum is paid anually prenumerando
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Equivalence Principle }
@@ -236,7 +239,6 @@
 \end{frame}
 
 \begin{frame}{Mathemical Reserves}
-	
 	Mathematical Reserves at given time = PV(future benefits) - PV(future premiums)\\
 	\vskip 0.5cm
 	Expressed in commutation functions:
@@ -246,8 +248,36 @@
 \end{frame}
 
 
-\begin{frame}{}
+\begin{frame}{2.1 Premium for Product at Inception}
+	\begin{itemize}
+		\item Compute the premium by means of the equivalence principle.
+		
+		\item For the mixes endowment with benefit $L$ we have
+				\begin{equation*}
+					\Pi = L \frac{A_{x:\overline{n}|}}{\ddot{a}_{x:\overline{n}|}} = L \left(\frac{M_x - M_{x+n} + D_{x+n}}{N_x - N_{x+n}}\right)
+				\end{equation*}
+	\item Plugging in the values we get $\Pi \approx 12'302.98$
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{2.2 Benefit $\tilde{L}$ after policyholder stops after one premium. }
 	
+\end{frame}
+
+
+\begin{frame}{2.3}
+	
+\end{frame}
+
+
+\begin{frame}{2.4}
+	
+\end{frame}
+
+
+\begin{frame}{2.5}
+
 \end{frame}
 
 
@@ -260,8 +290,71 @@
 	
 \end{frame}
 
+\begin{frame}{3.1 }
+	Two random variables $X$ and $Y$ are \textbf{stochastically independent} if and only if their joint probability distribution factorizes:
+	\begin{equation*}
+		P(X = x, Y = y) = P(X = x) \cdot P(Y = y) \quad \forall x, y
+	\end{equation*}
+	Or equivalently:
+	\begin{equation*}
+		P(Y = y \mid X = x) = P(Y = y) \quad \forall x, y.
+	\end{equation*}
+	\textit{Intuitively:} Knowing $X$ provides no information about $Y$\\
+	\vskip 0.3cm
+	Two random variables $X$ and $Y$ are \textbf{uncorrelated} if their covariance is zero: $$
+	\text{Cov}(X, Y) = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])] = 0.$$
+	Or equivalently: 
+	\begin{equation*}
+	\quad \mathbb{E}[XY] = \mathbb{E}[X] \cdot \mathbb{E}[Y].
+	\end{equation*}
+	% \textit{In other words} there is no \textbf{linear} relationship between $X$ and $Y$.
 
-\section{Appendix}
+	\end{frame}
+
+	\begin{frame}
+		\begin{block}{Independence $\Rightarrow$ Uncorrelated}
+		If $X$ and $Y$ are independent, then they are uncorrelated.
+
+	\textbf{Proof:}
+	\[
+	\mathbb{E}[XY] = \sum_x \sum_y xy \cdot P(X=x) \cdot P(Y=y) = \mathbb{E}[X] \cdot \mathbb{E}[Y]
+	\]
+	\end{block}
+
+	\vspace{0.5cm}
+
+	\begin{alertblock}{Uncorrelated $\not\Rightarrow$ Independence}
+	Two variables can be uncorrelated yet still be dependent!
+	\end{alertblock}
+\end{frame}
+
+
+\begin{frame}{3.1 Counterexample}
+\frametitle{Uncorrelated but Dependent}
+
+Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
+
+\vspace{0.3cm}
+
+\begin{itemize}
+    \item $\mathbb{E}[XY] = \mathbb{E}[X^3] = 0$ (by symmetry)
+    \vspace{0.2cm}
+    \item $\mathbb{E}[X] = 0$ and $\mathbb{E}[Y] = \frac{1}{3}$
+    \vspace{0.2cm}
+    \item Therefore: $\mathbb{E}[X] \cdot \mathbb{E}[Y] = 0$
+    \vspace{0.2cm}
+    \item So $\text{Cov}(X,Y) = 0$ $\Rightarrow$ \textbf{uncorrelated}
+    \vspace{0.2cm}
+    \item But $Y$ is completely determined by $X$ $\Rightarrow$ \textbf{dependent!}
+\end{itemize}
+
+\vspace{0.5cm}
+
+% \textbf{Key insight:} Independence means \textit{no relationship whatsoever}, while being uncorrelated only rules out \textit{linear} relationships.
+
+\end{frame}
+
+% \section{Appendix}
 
 
 
