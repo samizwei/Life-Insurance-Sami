@@ -23,6 +23,16 @@
 \institute{ETH Zurich}
 \date{20/01/2026}
 
+\AtBeginSection[]{
+  \begin{frame}[plain]
+    \centering
+    \vfill
+    {\Huge\insertsection}
+    \vfill
+  \end{frame}
+}
+
+
 \begin{document}
 
 \begin{frame}
@@ -38,8 +48,8 @@
 %  \tableofcontents
 %\end{frame}
 
+% \section{Task 1: Markov Model}
 \section{Task 1: Markov Model}
-
 \begin{frame}{Markov Chains}
 	What is a Markov Chain?\\
 	It is a Stochastic model that describes sequence of transitions from one state to another according to certain probabilistic rules.
@@ -141,26 +151,58 @@
 	\end{align*}
 	\vskip 0.5cm
 	Hence the reserve is given as:
-	\begin{align*}
-		V_j(t) = \sum\limits_{\tau=0}^{\infty} 
-	\end{align*}
+	\begin{align}
+		V_j(t) &= \sum\limits_{\tau=0}^{\infty} v^\tau \left(\sum_{i \in \mathcal{S}} a_i^{Pre}(i+ \tau) p_{ji}(t, t+\tau)  \right.\nonumber\\
+		&  + \left. v \sum_{i,k \in \mathcal{S}} a_{ik}^{Post}(t+ \tau) p_{ji}(t, t+\tau) p_{ik}(t+\tau,t+\tau + 1) \right)\\
+		\label{eq:reserve}\nonumber
+	\end{align}
+	Hence $V_j(t)$ is the current value of the future actuarial reserve cash flow $(A)$ based on todays information, i.e. $X_t=j$.
 \end{frame}
 
 
-
-
 \begin{frame}{Thiele Equation}
+	We can relate the mathematical reserves at two subsequent time points t and t+1 via the following equation:
 	\begin{block}{Theorem (Thiele's difference equation)}
 		The mathematical reserve between two subsequent periods are related by:
 		\begin{equation*}
-			V_i(t) = a_{i}^{pre}(t) + \sum_{j \in \mathcal{S}} v \cdot p_{ij}(t,t+1) \cdot (a_{ij}^{post}(t) + V_j(t+1))
+			V_j(t) = a_{j}^{pre}(t) + \sum_{i \in \mathcal{S}} v \cdot p_{ji}(t,t+1) \cdot (a_{ji}^{post}(t) + V_i(t+1))
 		\end{equation*}
 	\end{block}	
+	{\bfseries Remarks:}\\
+	\begin{itemize}
+		\item To solve Thiele's equation we need the boundary condition $V_j(T) = 0$ for all $j \in \mathcal{S}$.
+		\item The Thiele equation is leads to the same results as for the classical insurance model (using commutation functions)
+		\item Forward computation of reserves is possible, too. but numerically less stable.
+	\end{itemize}
 \end{frame}
 
-\begin{frame}{Thiele Equation}
-	{\bfseries Proof.}
-	We start 
+\begin{frame}{Proof Thiele Equation}
+	% {\bfseries Proof.}
+	We start the prove by separating the above sum into $\tau=0$ and the rest:\\
+	Lets start with $\tau=0$:
+	\begin{align*}
+		&\sum_{i \in \mathcal{S}} a_i^{Pre}(t) \underbrace{p_{ji}(t,t)}_{\delta_{ij}} + v \sum_{i,k \in \mathcal{S}} a_{ik}^{Post}(t) p_{ji}(t,t)p_{ik}(t,t+1) \\
+		&= a_j^{Pre}(t) + v \sum_{k \in \mathcal{S}} a_{jk}^{Post}(t) p_{jk}(t,t+1)
+	\end{align*}
+	Continute with $\tau \geq 1$ and using Chapman-Kolmogorov:
+	\begin{align*}
+		&\sum_{\tau \geq 1} v^\tau \left( \sum_i a_i^{Pre}(t+\tau)\cdot \underbrace{p_{ji}(t,t+\tau)}_{\sum_l p_{jl}(t, t+1)p_{li}(t+1,t+\tau)} \right.\\
+		&+ \left. \sum_{i,k} a_{ik}^{Post}(t+\tau) \cdot\underbrace{p_{ji}(t,t+\tau)}_{\sum_l p_{jl}(t, t+1)p_{li}(t+1,t+\tau)} \cdot p_{ik}(t+\tau,t+\tau + 1) \right)
+	\end{align*}
+\end{frame}
+
+\begin{frame}{Proof Thiele Equation}
+	By factor out terms which are independent of $\tau$ as well as rearranging the $\tau$-sum ($\tau-1 \to \tau$) we get:
+	\begin{align*}
+		&\sum_l p_{jl}(t, t+1) \cdot v \cdot \left( \sum_{\tau \geq 0} v^\tau p_{li}(t+1, t+1+\tau) \right.\\
+		&\left.\left[ \sum_i a_i^{Pre}(t+1+\tau) + \sum_{i,k} a_{ik}^{Post}(t+1+\tau)p_{ik}(t+1+\tau, t+\tau+1+1) \cdot v\right] \right)\\
+	\end{align*}
+	Comparing the expression in $()$ with equation \eqref{eq:reserve} we recognize that this is just $V_l(t+1)$.
+	Now combing both parts we get:
+	\begin{equation*}
+		V_j(t) = a_j^{Pre}(t) + v \sum_{k \in \mathcal{S}} p_{jk}(t,t+1) \left( a_{jk}^{Post}(t) + V_k(t+1) \right)
+	\end{equation*}
+	This concludes the proof.
 \end{frame}
 
 % \begin{frame}{Fixed Point Iteration Method}
@@ -181,6 +223,9 @@
 
 \section{Task 2 : Stopping to pay Premium}
 
+\begin{frame}{Set Up}
+	
+\end{frame}
 
 \begin{frame}{Equivalence Principle }
 	
