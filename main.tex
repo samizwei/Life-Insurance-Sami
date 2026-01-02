@@ -170,6 +170,8 @@
 	\end{block}	
 	{\bfseries Remarks:}\\
 	\begin{itemize}
+		\item Calculates the expected reserve directly using transition probabilities,
+		 while simulation estimates it by averaging over many random trajectories
 		\item To solve Thiele's equation we need the boundary condition $V_j(T) = 0$ for all $j \in \mathcal{S}$.
 		\item The Thiele equation is leads to the same results as for the classical insurance model (using commutation functions)
 		\item Forward computation of reserves is possible, too. but numerically less stable.
@@ -205,6 +207,26 @@
 	This concludes the proof.
 \end{frame}
 
+
+\begin{frame}{How to simulate a trajectory of a discrete time, finite State space Markov Chain}
+	
+\end{frame}
+
+
+
+\begin{frame}{Simulate mathematical reserve}
+	
+\end{frame}
+
+
+\begin{frame}{Determination of cumulative Probability Density of the reserves}
+	
+\end{frame}
+
+
+\begin{frame}{Simulation of individual cash flows}
+	
+\end{frame}
 % \begin{frame}{Fixed Point Iteration Method}
 
 %   \begin{block}{Definition}<1->
@@ -311,7 +333,7 @@
 
 	\end{frame}
 
-	\begin{frame}
+	\begin{frame}{3.1}
 		\begin{block}{Independence $\Rightarrow$ Uncorrelated}
 		If $X$ and $Y$ are independent, then they are uncorrelated.
 
@@ -329,8 +351,8 @@
 \end{frame}
 
 
-\begin{frame}{3.1 Counterexample}
-\frametitle{Uncorrelated but Dependent}
+\begin{frame}{3.1 Counterexample: Uncorrelated but Dependent}
+% \frametitle{Uncorrelated but Dependent}
 
 Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 
@@ -352,6 +374,11 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 
 % \textbf{Key insight:} Independence means \textit{no relationship whatsoever}, while being uncorrelated only rules out \textit{linear} relationships.
 
+\end{frame}
+
+
+\begin{frame}{3.2}
+	
 \end{frame}
 
 % \section{Appendix}

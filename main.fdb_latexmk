@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1767049594.22609 "/Users/samizweidler/Documents/ETH/Intership_Zurich_Insurance/Insuance_Courses/Life_Exam/Life-Insurance-Sami/main.tex" "main.pdf" "main" 1767049598.22494 0
-  "/Users/samizweidler/Documents/ETH/Intership_Zurich_Insurance/Insuance_Courses/Life_Exam/Life-Insurance-Sami/main.tex" 1767049594.02288 23583 80cd37d2d844263456136b78c7a39db6 ""
+["pdflatex"] 1767371758.12355 "/Users/samizweidler/Documents/ETH/Intership_Zurich_Insurance/Insuance_Courses/Life_Exam/Life-Insurance-Sami/main.tex" "main.pdf" "main" 1767371761.57901 0
+  "/Users/samizweidler/Documents/ETH/Intership_Zurich_Insurance/Insuance_Courses/Life_Exam/Life-Insurance-Sami/main.tex" 1767371754.54111 24145 cb10239c17640224f82e6897fe831c8b ""
   "/Users/samizweidler/Library/texlive/2024/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk" 1766487133.56618 6964 d2d8e0f242f2cc8ac051f9b9cc088c96 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -229,11 +229,11 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1735123668 8221442 20d855fe504b1b6ca3e4569cdc925592 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "Example_Markov.png" 1766404705.00634 181349 4507090496261620189a5edbe4bf36b0 ""
-  "main.aux" 1767049598.07202 5297 cd6b73a3b36c0dc4500d97c372eb4f2a "pdflatex"
-  "main.nav" 1767049598.0731 3452 f10a5e3fbc8d1c8c26f03e21df0d1ceb "pdflatex"
-  "main.out" 1767049598.07292 639 8750e3b63b41d3a716bf67c92318abbf "pdflatex"
-  "main.tex" 1767049594.02288 23583 80cd37d2d844263456136b78c7a39db6 ""
-  "main.toc" 1767049598.07313 233 4122a68d998b63dd3b9c620152e751c8 "pdflatex"
+  "main.aux" 1767371761.48656 5941 74840241cac22b58a40a2caa203a2762 "pdflatex"
+  "main.nav" 1767371761.48781 3916 e4ae49313f2d7f6abfd6cb405d7b7535 "pdflatex"
+  "main.out" 1767371761.48758 639 8750e3b63b41d3a716bf67c92318abbf "pdflatex"
+  "main.tex" 1767371754.54111 24145 cb10239c17640224f82e6897fe831c8b ""
+  "main.toc" 1767371761.48815 233 b18c518b0aa4a1ba40c7ab777129c7a1 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
