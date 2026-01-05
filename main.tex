@@ -245,20 +245,46 @@
 
 \section{Task 2 : Stopping to pay Premium}
 
-\begin{frame}{Set Up}
+\begin{frame}{Mixed Endowment Insurance}
+	What is a mixed endowment?
 	\begin{itemize}
-		\item Consider a mixed endowment $A_{80:\overline{10}|}$ maturing at age 90 with benefit insured $L=100'000$.
-		\item Techinical interest rate $i=2\%$ and Preimum is paid anually prenumerando
+		\item a mix of a term (temporary death) and a pure endowment insurance
+		\item a lump sum is payable on death or reachinga certain age
+	\end{itemize}
+	Let us look at these random variables individually
+	\begin{itemize}
+		\item term insurance : $Z_1 = v^{k+1} \mathbbm{1}_{k<n}$ \\
+		\vskip 0.2cm
+		$A_{x:\overline{n}|}^{\quad 1} = \mathbb{E}[Z_1] = \sum_{k=0}^{n-1} v^{k+1} \prescript{}{k}{p}_x \cdot q_{x+k} = \sum_{k=0}^{n-1} v^{k+1} \cdot\tfrac{l_{x+k}}{l_x}\cdot\tfrac{d_{x+k}}{l_{x+k}} $ \\ \vskip 0.2cm $= \sum_{k=0}^{n-1} \frac{C_{x+k}}{D_x}= \frac{M_x - M_{x+n}}{D_x}$
+		% 						&= \sum_{k=0}^{n-1} \frac{C_{x+k}}{D_x} = \frac{M_x - M_{x+n}}{D_x}
+		% \begin{align*}
+		% 	A_{x:\overline{n}|} = \mathbb{E}[Z_1] &= \sum_{k=0}^{n-1} v^{k+1} \prescript{}{k}{p}_x \cdot q_{x+k} = \sum_{k=0}^{n-1} v^{k+1} \cdot\tfrac{l_{x+k}}{l_x}\cdot\tfrac{d_{x+k}}{l_{x+k}} \\
+		% 						&= \sum_{k=0}^{n-1} \frac{C_{x+k}}{D_x} = \frac{M_x - M_{x+n}}{D_x}
+		% \end{align*}
+		\item pure endowment: $Z_2 = v^{k+1} \mathbbm{1}_{k\geq n}$
+		\item $ A_{x:\overline{n}|}^{1} = \mathbb{E}[Z_2] = \sum_{k=n}^{\infty} v^n \mathbb{P}[K=k] = v^n \mathbb{P}[K \geq n] = v^n \cdot \prescript{}{n}{p}_x = \frac{D_{x+n}}{D_x}$
+		
+		\item Thus the epxectation value for the mixed enovment is given by \\
+			$$ A_{x:\overline{n}|} = \mathbb{E}[Z] = \mathbb{E}[Z_1] + \mathbb{E}[Z_2] = \frac{M_x - M_{x+n} + D_{x+n}}{D_x}$$
+	\end{itemize}
+	% \begin{itemize}
+	% 	\item Consider a mixed endowment $A_{80:\overline{10}|}$ maturing at age 90 with benefit insured $L=100'000$.
+	% 	\item Techinical interest rate $i=2\%$ and Preimum is paid anually prenumerando
+	% \end{itemize}
+\end{frame}
+
+\begin{frame}{Equivalence Principle}
+	In order to determine the premium one typically uses the Equivalence Principle
+	\begin{enumerate}
+		\item $\mathbb{E}[L] = 0$ where $L$ denotes the loss, or equivalently,
+		\item The expected value of premiums is equal to the expected value of benefits.
+	\end{enumerate}
+	Remark: \\
+	\begin{itemize}
+		\item The Equivalece Principle is equivalent to the requirement of the mathematical reserve at inception to be zero.
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Equivalence Principle }
-	
-\end{frame}
-
-\begin{frame}{Death \& Pure Endowment Insurance}
-	
-\end{frame}
 
 \begin{frame}{Mathemical Reserves}
 	Mathematical Reserves at given time = PV(future benefits) - PV(future premiums)\\
@@ -303,20 +329,20 @@
 				\prescript{}{1}{\tilde{L}} = \frac{\prescript{}{k}{V}_{x}}{A_{x+k:\overline{n-k}|}} = \prescript{}{k}{V}_x \cdot \frac{D_{x+k}}{M_{x+k} - M_{x+n} + D_{x+n}}
 			\end{equation*}
 		\begin{table}[h]
-  			\begin{tabular}{|c|c|}
+  			\begin{tabular}{|c|c|c|}
     		\hline
-    		$k$ & $\text{Benefit Level }\prescript{}{k}{\tilde{L}}$ \\
+    		$k$ & Reserve  $\prescript{}{j}{V}_x$ &  $\text{Benefit Level }\prescript{}{k}{\tilde{L}}$ \\
     		\hline
-    		1 & 9228.77 \\
-    		2 & 18375.48 \\
-			3 & 27498.51 \\
-			4 & 36670.15 \\
-			5 & 45980.83\\
-			6 & 55545.00 \\
-			7 & 65509.06 \\
-			8 & 76062.14 \\
-			9 & 87450.96 \\
-			10 & 100000.0\\
+    		1 & 8062.41 & 9228.77 \\
+    		2 & 16260.21 & 18375.48 \\
+			3 & 24650.21 & 27498.51 \\
+			4 & 33308.23 & 36670.15 \\
+			5 & 42335.99 & 45980.83\\
+			6 & 51870.01 & 55545.00 \\
+			7 & 62095.67 & 65509.06 \\
+			8 & 73266.94 & 76062.14 \\
+			9 & 85736.24 & 87450.96 \\
+			10 & 100000.0 & 100000.0\\
 			\hline
   			\end{tabular}
 			\end{table}
@@ -331,8 +357,8 @@
 		\item by the {\bfseries Equivalence Principle}: $\mathbb{E}(premium) = \mathbb{E}(benefits)$
 		\item the benefits are computed as
 			\begin{align*} 
-				\mathbb{E}(benefits) &= v \cdot q_x \cdot L + v^2 \cdot \prescript{}{1}{L} \cdot p_x \cdot q_{x+1} + \dots + v^{10} \cdot \prescript{}{1}{L} \cdot p_{x+10}\\
-												&= v \cdot q_x \cdot L + v \cdot p_x \cdot \prescript{}{1}{\tilde{L}}\cdot A_{x+1 : \overline{9}}
+				\mathbb{E}(benefits) &= v \cdot q_x \cdot L + v^2 \cdot \prescript{}{1}{\tilde{L}} \cdot p_x \cdot q_{x+1} + \dots + v^{10} \cdot \prescript{}{1}{\tilde{L}} \cdot p_{x+10}\\
+												&= v \cdot q_x \cdot L + v \cdot p_x \cdot \prescript{}{1}{\tilde{L}}\cdot A_{x+1 : \overline{9}|}
 			\end{align*}
 		\item A short check in the jupyter notebook shows that $\mathbb{E}(premium) = \mathbb{E}(benefits)$
 	\end{itemize}
@@ -340,7 +366,27 @@
 
 
 \begin{frame}{2.5 Which equivalence principle is fulfilled for the second premium assuming only one premium is paid.}
+	\begin{itemize}
+		\item t=1
+		\item Assuming one premium is paid and compute the second one
+		\item Assuming that insured person survives the first year
+		\item Insurer is at risk to pay $L$ if the death occurs in $[1,2)$
+		\item From time $t=2$ on until maturity the insruer is at risk of $\prescript{}{2}{\tilde{L}}_x$
+		\item By the Equivalence Principle $\mathbb{E}(premium) = \mathbb{E}(benefits)$
+		\item $\mathbb{E}(premium) = P + \prescript{}{1}{V}_x$
+	\end{itemize}
+\end{frame}
 
+\begin{frame}{2.5 Which equivalence principle is fulfilled for the second premium assuming only one premium is paid.}
+	\begin{itemize}
+		\item 	Similar to before we compute the benefits:
+				\begin{align*}
+					\mathbb{E}(benefits) = v \cdot q_{x+1} \cdot L + v \cdot p_{x+1} \cdot \prescript{}{2}{\tilde{L}} \cdot A_{x+2 : \overline{8}|}
+				\end{align*}
+
+		\item A short check in the jupyter notebook shows that $\mathbb{E}(premium) = \mathbb{E}(benefits).$
+	\end{itemize}
+	
 \end{frame}
 
 
