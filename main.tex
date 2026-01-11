@@ -138,7 +138,7 @@
 	\end{equation*}
 	Finally we can define the mathematical reserve at time t as:
 	\begin{align*}
-		V_j(t) = \mathbb{E}[\text{PV of future cash flows} | X_t=j] = \mathbb{E}[\sum\limits_{\tau=0}^{\infty} \tilde{A}(t + \tau) | X_t=j]
+		V_j(t) = \mathbb{E}[\text{PV of future cash flows} | X_t=j] = \mathbb{E}[\sum\limits_{\tau=0}^{\infty} v ^\tau\tilde{A}(t + \tau) | X_t=j]
 	\end{align*}
 \end{frame}
 
@@ -235,16 +235,18 @@
 
 
 \begin{frame}{Determination of cumulative Probability Density of the reserves}
-	Let $\{V(\omega_k)[0]\}_{k=1}^{n}$ be independent trajectoires. The empirical ccumulatice distribution function is given by: $F_n(v) = \frac{1}{n}\sum_{k=1}^{n} \mathbbm{1}_{[-\infty, v]}(V(\omega_k)[0])$
+	Let $\{V(\omega_k)[0]\}_{k=1}^{n}$ be independent trajectoires. The empirical ccumulatice distribution function is given by: $$F_n(v) = \frac{1}{n}\sum_{k=1}^{n} \mathbbm{1}_{[-\infty, v]}(V(\omega_k)[0])$$
 	\vskip 0.5cm
 	Then define the random variable $D_n = \sup_{v \in \mathbb{R}} \left| F_n(v) - F(v) \right|$. By the {\bfseries Glivenko-Cantelli Theorem} we know that $D_n \xrightarrow{a.s.} 0$ for $n \to \infty$.\\
+	\vskip 0.5cm
+	Hence if we have enough samples/trajectories we can approximate the cumulative distribution function of the mathematical reserves.
 \end{frame}
 
 
 
-\begin{frame}{Simulation of individual cash flows}
+% \begin{frame}{Simulation of individual cash flows}
 	
-\end{frame}
+% \end{frame}
 % \begin{frame}{Fixed Point Iteration Method}
 
 %   \begin{block}{Definition}<1->
@@ -388,15 +390,39 @@
 \end{frame}
 
 
+% \begin{frame}{2.5 Which equivalence principle is fulfilled for the second premium assuming only one premium is paid.}
+% 	\begin{itemize}
+% 		\item t=1
+% 		\item Assuming one premium is paid and compute the second one
+% 		\item Assuming that insured person survives the first year
+% 		\item Insurer is at risk to pay $L$ if the death occurs in $[1,2)$
+% 		\item From time $t=2$ on until maturity the insruer is at risk of $\prescript{}{2}{\tilde{L}}_x$
+% 		\item By the Equivalence Principle $\mathbb{E}(premium) = \mathbb{E}(benefits)$
+% 		\item $\mathbb{E}(premium) = P + \prescript{}{1}{V}_x$
+% 	\end{itemize}
+% \end{frame}
+
+% \begin{frame}{2.5 Which equivalence principle is fulfilled for the second premium assuming only one premium is paid.}
+% 	\begin{itemize}
+% 		\item 	Similar to before we compute the benefits:
+% 				\begin{align*}
+% 					\mathbb{E}(benefits) &= v \cdot q_{x+1} \cdot L + v^2 \cdot \prescript{}{2}{\tilde{L}} \cdot p_{x+1} \cdot q_{x+2} + \dots + v^{9} \cdot \prescript{}{2}{\tilde{L}} \cdot \prescript{}{9}{p}_{x}\\
+% 					&=v \cdot q_{x+1} \cdot L + v \cdot p_{x+1} \cdot \prescript{}{2}{\tilde{L}} \cdot A_{x+2 : \overline{8}|}
+% 				\end{align*}
+
+% 		\item A short check in the jupyter notebook shows that $\mathbb{E}(premium) = \mathbb{E}(benefits).$
+% 	\end{itemize}
+	
+% \end{frame}
 \begin{frame}{2.5 Which equivalence principle is fulfilled for the second premium assuming only one premium is paid.}
 	\begin{itemize}
-		\item t=1
-		\item Assuming one premium is paid and compute the second one
+		\item Consider $t=1$
+		\item Assuming one premium is paid at $t=0$
 		\item Assuming that insured person survives the first year
-		\item Insurer is at risk to pay $L$ if the death occurs in $[1,2)$
-		\item From time $t=2$ on until maturity the insruer is at risk of $\prescript{}{2}{\tilde{L}}_x$
+		\item Insurer is at risk to pay $L$ if the death occurs in $[0,1)$
+		\item From time $t=1$ on until maturity the insruer is at risk of $\prescript{}{2}{\tilde{L}}_x$
 		\item By the Equivalence Principle $\mathbb{E}(premium) = \mathbb{E}(benefits)$
-		\item $\mathbb{E}(premium) = P + \prescript{}{1}{V}_x$
+		\item $\mathbb{E}(premium) = \prescript{}{1}{V}_x$
 	\end{itemize}
 \end{frame}
 
@@ -404,11 +430,11 @@
 	\begin{itemize}
 		\item 	Similar to before we compute the benefits:
 				\begin{align*}
-					\mathbb{E}(benefits) &= v \cdot q_{x+1} \cdot L + v^2 \cdot \prescript{}{2}{\tilde{L}} \cdot p_{x+1} \cdot q_{x+2} + \dots + v^{9} \cdot \prescript{}{2}{\tilde{L}} \cdot \prescript{}{9}{p}_{x}\\
-					&=v \cdot q_{x+1} \cdot L + v \cdot p_{x+1} \cdot \prescript{}{2}{\tilde{L}} \cdot A_{x+2 : \overline{8}|}
+					\mathbb{E}(benefits) &= v \cdot q_{x+1} \cdot \prescript{}{1}{\tilde{L}} + v^2 \cdot \prescript{}{1}{\tilde{L}} \cdot p_{x+1} \cdot q_{x+2} + \dots + v^{9} \cdot \prescript{}{1}{\tilde{L}} \cdot \prescript{}{9}{p}_{x}\\
+					&= v \prescript{}{1}{\tilde{L}} \cdot A_{x+1 : \overline{9}|}
 				\end{align*}
 
-		\item A short check in the jupyter notebook shows that $\mathbb{E}(premium) = \mathbb{E}(benefits).$
+		\item A short check in the jupyter notebook shows that $\mathbb{E}(premium) = \mathbb{E}(benefits)$ as well as the euqality is exactly the defintion for the reduced benefit $\prescript{}{1}{\tilde{L}}$.
 	\end{itemize}
 	
 \end{frame}
@@ -419,9 +445,9 @@
 
 \section{Task 3: Disability Insurance on two lives}
 
-\begin{frame}{Problem}
-	To sample Markov chains install the following python package to guarantee functionality of the class \texttt{Markov}: \href{https://libraries.io/pypi/markovlv/2.6.0}{markovlv}.
-\end{frame}
+% \begin{frame}{Problem}
+% 	To sample Markov chains install the following python package to guarantee functionality of the class \texttt{Markov}: \href{https://libraries.io/pypi/markovlv/2.6.0}{markovlv}.
+% \end{frame}
 
 \begin{frame}{3.1 }
 	Two random variables $X$ and $Y$ are \textbf{stochastically independent} if and only if their joint probability distribution factorizes:
@@ -488,26 +514,51 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 \end{frame}
 
 
-\begin{frame}{3.3}
+% \begin{frame}{3.3}
+
+% \end{frame}
+
+
+\begin{frame}{3.4 MC Averages Analysis}
+	Here we show how the Monte Carlo estimates move with increasing number of simulated trajectories.
+	\begin{figure}
+		\includegraphics[width=1.0\textwidth]{Mean_Reserve_Estimates_with_SEM_Markov_States_34.png}
+	\end{figure}
+\end{frame}
+
+
+
+\begin{frame}{3.4 CDF for 100'000 Simulations}
+	\begin{figure}
+		\includegraphics[width=0.7\textwidth]{Empirical_CDF_Markov_States_34.png}
+	\end{figure}
 
 \end{frame}
 
 
-\begin{frame}{3.4}
-
+\begin{frame}{3.5 Discussion of Risk Levels of States}
+	In order to dicuss the riskiness of the states we look at the coefficient of variation  of the reserve in each state\\
+	\begin{figure}
+		\includegraphics[width=0.7\textwidth]{Coefficient_of_Variation_Markov_States_35.png}
+	\end{figure}
+	% \begin{itemize}
+	% 	\item 	{ \bfseries Rule of thumb}: Under identical mortality and disability assumptions, insured states associated with higher mathematical reserves are riskier for the insurer.
+	% 	\item The state $(D,D)$ is thus the riskiest state since both persons are disabled and with no possibility of reactivation. Hence the insurer pays the highest possible annuity of $18'000$ per year.
+	% 	\item We sort the states according to their risk level (from riskiest to safest):
+	% 		\begin{align*}
+	% 			(3,3) &> (D,D) >  (3,S) > (3,T) > (D,T) > (D,S) \\
+	% 			&> (S,3) > (T,3) > (S,D) > (T,D) > (S,S)
+	% 		\end{align*}
+	% \end{itemize}
 \end{frame}
 
-
-\begin{frame}{3.5}{Discussion of Risk Levels of States}
+\begin{frame}{3.5 Discussion of Risk Levels of States}
 	\begin{itemize}
-		\item 	{ \bfseries Rule of thumb}: Under identical mortality and disability assumptions, insured states associated with higher mathematical reserves are riskier for the insurer.
-		\item The state $(D,D)$ is thus the riskiest state since both persons are disabled and with no possibility of reactivation. Hence the insurer pays the highest possible annuity of $18'000$ per year.
-		\item We sort the states according to their risk level (from riskiest to safest):
-			\begin{align*}
-				(3,3) &> (D,D) >  (3,S) > (3,T) > (D,T) > (D,S) \\
-				&> (S,3) > (T,3) > (S,D) > (T,D) > (S,S)
-			\end{align*}
-	\end{itemize}
+		\item The state $(D,T)$ is the most dangerous state (has highest CoV) since the man is disabled and rather young (30y).
+			 Hence he is has three possibilities reactiate, remain disabled for extended periods.
+		\item The diversification from having two people in similar but independent states reduces relative variability
+		\item The state $(3,3)$ is the safest one since both personsn
+	\end{itemize}	
 \end{frame}
 
 \begin{frame}{3.6}{Dicussion of Changes in Risk when changing }
@@ -517,8 +568,64 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 
 \begin{frame}{3.7}
 \end{frame}
+
+
+
+\begin{frame}{3.8: 8-policy portfolio simulation}
+	\begin{itemize}
+		\item Assuming the 8 policies are independent, we compute the total loss as the sum of the indiviudal mathematical reserves.
+			$$ \mathbb{E}[L] = \sum_{i=1}^8 \mathbb{E}[L_i] = 1'816'458.10$$
+		\item Now we want to compute the stop loss premium $\Pi(\beta)$ for the deductibles $\beta \in \{1.5\cdot \mathbb{E}[L], 3 \cdot \mathbb{E}[L]\}$
+		\item The stop loss premium is defined as $$\Pi(\beta) = \mathbb{E}[(L- \beta)_+] =  \int_{\beta}^{\infty} (1-F(x)) \, dx $$
+		\item In order to create a histogram-based approximation of the cumulative distribution function $F(x)$ we use 1'000'000 simulated portfolio losses (in total 8'000'000 simulations)
+		\item 
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{3.8: 8-policy portfolio simulation}
+	Inser pciture of histogram here
+\end{frame}
+
+
+\begin{frame}{3.8: 8-policy portfolio simulation}
+	Now we shortly describe how to compute the stop loss premium $\Pi(\beta)$ using a histogram-based approximation of the cumulative distribution function $F(x)$.
+	\begin{itemize}
+		\item Let the bins of the histogram be $[a_1,a_2), \,[a_2,a_3), \ \dots,\,[a_N,a_{N+1})$.
+		\item Assume the survival function is constant on each bin: $\bar F(x) = 1 - F(x) \approx \bar F_i $ where $\bar F_i$ denotes the value of the survival function on bin $i$.
+		\item The integral representation approximated by the Riemann sum: $$\Pi(\beta) \approx \sum_{i:\, a_i \ge \beta} \bar F_i \,(a_{i+1}-a_i) $$
+		\item Plugging in the values for $\beta$ we get:
+			\begin{align*}
+				\Pi(1.5\cdot \mathbb{E}[L]) &= \\
+				\Pi(3\cdot \mathbb{E}[L]) &=
+			\end{align*}
+	\end{itemize}
+\end{frame}
 % \section{Appendix}
 
+% \paragraph{Histogram setup.}
+% Let the bins of the histogram be
+% \[
+% [a_1,a_2),\;[a_2,a_3),\;\dots,\;[a_N,a_{N+1}) .
+% \]
+% Assume the survival function is constant on each bin:
+% \[
+% \bar F(x) = 1 - F(x) \approx \bar F_i 
+% \quad \text{for } x \in [a_i,a_{i+1}) ,
+% \]
+% where $\bar F_i$ denotes the value of the survival function on bin $i$.
+
+% \paragraph{Discrete approximation.}
+% The integral representation
+% \[
+% \Pi(\beta) = \int_{\beta}^{\infty} \bar F(x)\,dx
+% \]
+% is approximated by the Riemann sum
+% \[
+% \Pi(\beta) \approx 
+% \sum_{i:\, a_i \ge \beta}
+% \bar F_i \,(a_{i+1}-a_i) .
+% \]
 
 
 
