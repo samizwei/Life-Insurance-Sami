@@ -454,7 +454,6 @@ INPUT ./Coefficient_of_Variation_Markov_States_35.png
 INPUT ./Coefficient_of_Variation_Markov_States_35.png
 INPUT ./Coefficient_of_Variation_Markov_States_35.png
 INPUT ./Coefficient_of_Variation_Markov_States_35.png
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 OUTPUT main.nav
 OUTPUT main.toc
 OUTPUT main.snm
