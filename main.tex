@@ -54,7 +54,7 @@
 	What is a Markov Chain?\\
 	It is a Stochastic model that describes sequence of transitions/ possible events in which the probability of each event depends only on the state attained in the previous event.
 	\begin{figure}
-		\includegraphics[width=0.5\textwidth]{Example_Markov.png}
+		\includegraphics[width=0.5\textwidth]{Plots/Example_Markov.png}
 	\end{figure}
 \end{frame}
 
@@ -522,7 +522,7 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 \begin{frame}{3.4 MC Averages Analysis}
 	Here we show how the Monte Carlo estimates move with increasing number of simulated trajectories.
 	\begin{figure}
-		\includegraphics[width=1.0\textwidth]{Mean_Reserve_Estimates_with_SEM_Markov_States_34.png}
+		\includegraphics[width=1.0\textwidth]{Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png}
 	\end{figure}
 \end{frame}
 
@@ -530,7 +530,7 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 
 \begin{frame}{3.4 CDF for 100'000 Simulations}
 	\begin{figure}
-		\includegraphics[width=0.7\textwidth]{Empirical_CDF_Markov_States_34.png}
+		\includegraphics[width=0.7\textwidth]{Plots/Empirical_CDF_Markov_States_34.png}
 	\end{figure}
 
 \end{frame}
@@ -539,7 +539,7 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 \begin{frame}{3.5 Discussion of Risk Levels of States}
 	In order to dicuss the riskiness of the states we look at the coefficient of variation  of the reserve in each state\\
 	\begin{figure}
-		\includegraphics[width=0.7\textwidth]{Coefficient_of_Variation_Markov_States_35.png}
+		\includegraphics[width=0.7\textwidth]{Plots/Coefficient_of_Variation_Markov_States_35.png}
 	\end{figure}
 	% \begin{itemize}
 	% 	\item 	{ \bfseries Rule of thumb}: Under identical mortality and disability assumptions, insured states associated with higher mathematical reserves are riskier for the insurer.
@@ -555,13 +555,18 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 \begin{frame}{3.5 Discussion of Risk Levels of States}
 	\begin{itemize}
 		\item The state $(D,T)$ is the most dangerous state (has highest CoV) since the man is disabled and rather young (30y).
-			 Hence he is has three possibilities reactiate, remain disabled for extended periods.
+			 Hence he is has three possibilities: reactivate, remain disabled for extended periods.
 		\item The diversification from having two people in similar but independent states reduces relative variability
 		\item The state $(3,3)$ is the safest one (although highest annuity to be paid) since both persons are disabled and either remain disabled or die. 
+		\item So ranking the states according to their risk level (from riskiest to safest) we get:
+			\begin{align*}
+				(D,T) &> (D,D) >  (3,T) > (D,S) > (3,3) > (3,S) \\
+				&> (T,3) > (S,D) > (S,3) > (T,D) > (S,S)
+			\end{align*}
 	\end{itemize}	
 \end{frame}
 
-\begin{frame}{3.6 Dicussion of Changes in Risk when changing }
+\begin{frame}{3.6 Dicussion of Changes in Risk when changing from independent to Dependent Random Variables }
 	
 \end{frame}
 

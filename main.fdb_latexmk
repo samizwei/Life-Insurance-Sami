@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1768300282.96356 "/Users/samizweidler/Documents/ETH/Intership_Zurich_Insurance/Insuance_Courses/Life_Exam/Life-Insurance-Sami/main.tex" "main.pdf" "main" 1768300288.47559 0
-  "/Users/samizweidler/Documents/ETH/Intership_Zurich_Insurance/Insuance_Courses/Life_Exam/Life-Insurance-Sami/main.tex" 1768300282.74509 38112 cb6783c0e2e9937606c89d8eefc30f8b ""
+["pdflatex"] 1768660026.5103 "/Users/samizweidler/Documents/ETH/Intership_Zurich_Insurance/Insuance_Courses/Life_Exam/Life-Insurance-Sami/main.tex" "main.pdf" "main" 1768660032.05724 0
+  "/Users/samizweidler/Documents/ETH/Intership_Zurich_Insurance/Insuance_Courses/Life_Exam/Life-Insurance-Sami/main.tex" 1768660026.28957 38413 09db91e3b75a34a5928f7f90f1327bab ""
   "/Users/samizweidler/Library/texlive/2024/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk" 1766487133.56618 6964 d2d8e0f242f2cc8ac051f9b9cc088c96 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -243,15 +243,15 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1735123702.13047 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1735123668 8221442 20d855fe504b1b6ca3e4569cdc925592 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Coefficient_of_Variation_Markov_States_35.png" 1768255113.59197 203962 48f08d3e4b39fc880215fdd93982a716 ""
-  "Empirical_CDF_Markov_States_34.png" 1768255112.03442 486001 d4463e066ee409f25bbb08b9f87d8191 ""
-  "Example_Markov.png" 1766404705.00634 181349 4507090496261620189a5edbe4bf36b0 ""
-  "Mean_Reserve_Estimates_with_SEM_Markov_States_34.png" 1768255111.46927 466072 c18da380702bd7d946a860cce25a1148 ""
-  "main.aux" 1768300288.37676 6712 603da507a3a2cca4d4e255eca8132aac "pdflatex"
-  "main.nav" 1768300288.37779 4471 5029f01b24115fea59e95d08eb209946 "pdflatex"
-  "main.out" 1768300288.37761 639 8750e3b63b41d3a716bf67c92318abbf "pdflatex"
-  "main.tex" 1768300282.74509 38112 cb6783c0e2e9937606c89d8eefc30f8b ""
-  "main.toc" 1768300288.37781 233 d51c95e774ffbbbdf91f4cad2bd31771 "pdflatex"
+  "Plots/Coefficient_of_Variation_Markov_States_35.png" 1768255113.59197 203962 48f08d3e4b39fc880215fdd93982a716 ""
+  "Plots/Empirical_CDF_Markov_States_34.png" 1768255112.03442 486001 d4463e066ee409f25bbb08b9f87d8191 ""
+  "Plots/Example_Markov.png" 1766404705.00634 181349 4507090496261620189a5edbe4bf36b0 ""
+  "Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png" 1768561128.09337 466072 c18da380702bd7d946a860cce25a1148 ""
+  "main.aux" 1768660031.9616 6712 603da507a3a2cca4d4e255eca8132aac "pdflatex"
+  "main.nav" 1768660031.96278 4471 5029f01b24115fea59e95d08eb209946 "pdflatex"
+  "main.out" 1768660031.96261 639 8750e3b63b41d3a716bf67c92318abbf "pdflatex"
+  "main.tex" 1768660026.28957 38413 09db91e3b75a34a5928f7f90f1327bab ""
+  "main.toc" 1768660031.9628 233 d51c95e774ffbbbdf91f4cad2bd31771 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
