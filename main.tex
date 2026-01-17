@@ -420,7 +420,7 @@
 		\item Assuming one premium is paid at $t=0$
 		\item Assuming that insured person survives the first year
 		\item Insurer is at risk to pay $L$ if the death occurs in $[0,1)$
-		\item From time $t=1$ on until maturity the insruer is at risk of $\prescript{}{2}{\tilde{L}}_x$
+		\item From time $t=1$ on until maturity the insruer is at risk of $\prescript{}{1}{\tilde{L}}_x$
 		\item By the Equivalence Principle $\mathbb{E}(premium) = \mathbb{E}(benefits)$
 		\item $\mathbb{E}(premium) = \prescript{}{1}{V}_x$
 	\end{itemize}
@@ -431,7 +431,7 @@
 		\item 	Similar to before we compute the benefits:
 				\begin{align*}
 					\mathbb{E}(benefits) &= v \cdot q_{x+1} \cdot \prescript{}{1}{\tilde{L}} + v^2 \cdot \prescript{}{1}{\tilde{L}} \cdot p_{x+1} \cdot q_{x+2} + \dots + v^{9} \cdot \prescript{}{1}{\tilde{L}} \cdot \prescript{}{9}{p}_{x}\\
-					&= v \prescript{}{1}{\tilde{L}} \cdot A_{x+1 : \overline{9}|}
+					&= \prescript{}{1}{\tilde{L}} \cdot A_{x+1 : \overline{9}|}
 				\end{align*}
 
 		\item A short check in the jupyter notebook shows that $\mathbb{E}(premium) = \mathbb{E}(benefits)$ as well as the euqality is exactly the defintion for the reduced benefit $\prescript{}{1}{\tilde{L}}$.

@@ -787,6 +787,8 @@ def QxNoTrend(gender,x,t,param =[]):
     return(Qx(gender,x,2024,param =param))
 
 def Ix(gender,x,t,param =[]):
+    # if x > 65:
+    #     return 0.0
     return(min(0.25,max(0,0.0004+10**(0.06*x-5.46))))
 
 
