@@ -588,7 +588,35 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 \end{frame}
 
 \begin{frame}{3.6 Dicussion of Changes in Risk when changing from independent to Dependent Random Variables }
-	
+	We make the random variables dependent by adapting the follwoing in the code:
+	\begin{align*}
+		&\texttt{a.vSetLevelsMort(dMortSS = 1., dMortSD =10., dMortDD=1., dMortST=1., dMortDT=1.)}\\
+		&\texttt{a.vSetLevelsDis(dDisSS=1., dDisSD=1., dDisST=1.)}\\
+		&\texttt{a.vSetLevelsReact(dReactSD=1., dReactDD=1., dReactDT=1.)}
+	\end{align*}
+	This means that if one person is disabled the other one has a 10 times higher chance of dying. 
+\end{frame}
+
+\begin{frame}{3.6 Dicussion of Changes in Risk when changing from independent to Dependent Random Variables }
+	\begin{figure}
+		\includegraphics[width=1.\textwidth]{Plots/Empirical_CDF_Comparison_Independent_Dependent_Markov_States_36.png}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}{3.6 Dicussion of Changes in Risk when changing from independent to Dependent Random Variables }
+	\begin{figure}
+		\includegraphics[width=0.8\textwidth]{Plots/Coefficient_of_Variation_Markov_States_36.png}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}{3.6 Dicussion of Changes in Risk when changing from independent to Dependent Random Variables }
+	\begin{itemize}
+		\item The CDFs for the dependent case are shifted to the left compared to the independent case.
+		\item This is intuitive since the higher chance of death leads to lower expected cash flows to be paid out by the insurer.
+		\item Hence the VaR at level $95 \%$ 
+	\end{itemize}
 \end{frame}
 
 
@@ -600,7 +628,10 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 
 
 \begin{frame}{3.7 Observations}
-	
+	\begin{itemize}
+		\item A trend we observe over all states is that the CDF for age 66 is shifted below the CDF for age 65.
+		\item This is intuitive since the older the person the higher the probability of death and hence the lower the expected cash flows to be paid out by the insurer.
+	\end{itemize}
 \end{frame}
 
 
@@ -621,6 +652,7 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 	\begin{figure}
 		\includegraphics[width=1.\textwidth]{Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png}
 	\end{figure}
+	The above histogram contains of $\approx 4800$ bins of width $500$.
 \end{frame}
 
 
@@ -632,7 +664,7 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 		\item The integral representation approximated by the Riemann sum: $$\Pi(\beta) \approx \sum_{i:\, a_i \ge \beta} \bar F_i \,(a_{i+1}-a_i) $$
 		\item Plugging in the values for $\beta$ we get:
 			\begin{align*}
-				\Pi(1.5\cdot \mathbb{E}[L]) &= 10.25\\
+				\Pi(1.5\cdot \mathbb{E}[L]) &= 8.47\\
 				\Pi(3\cdot \mathbb{E}[L]) &= 0.0
 			\end{align*}
 	\end{itemize}

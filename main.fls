@@ -459,6 +459,19 @@ INPUT ./Plots/Coefficient_of_Variation_Markov_States_35.png
 INPUT ./Plots/Coefficient_of_Variation_Markov_States_35.png
 INPUT ./Plots/Coefficient_of_Variation_Markov_States_35.png
 INPUT ./Plots/Coefficient_of_Variation_Markov_States_35.png
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
+INPUT ./Plots/Empirical_CDF_Comparison_Independent_Dependent_Markov_States_36.png
+INPUT ./Plots/Empirical_CDF_Comparison_Independent_Dependent_Markov_States_36.png
+INPUT ./Plots/Empirical_CDF_Comparison_Independent_Dependent_Markov_States_36.png
+INPUT ./Plots/Empirical_CDF_Comparison_Independent_Dependent_Markov_States_36.png
+INPUT ./Plots/Empirical_CDF_Comparison_Independent_Dependent_Markov_States_36.png
+INPUT ./Plots/Coefficient_of_Variation_Markov_States_36.png
+INPUT ./Plots/Coefficient_of_Variation_Markov_States_36.png
+INPUT ./Plots/Coefficient_of_Variation_Markov_States_36.png
+INPUT ./Plots/Coefficient_of_Variation_Markov_States_36.png
+INPUT ./Plots/Coefficient_of_Variation_Markov_States_36.png
 INPUT ./Plots/Empirical_CDF_Cashflows_All_States.png
 INPUT ./Plots/Empirical_CDF_Cashflows_All_States.png
 INPUT ./Plots/Empirical_CDF_Cashflows_All_States.png
@@ -497,5 +510,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
