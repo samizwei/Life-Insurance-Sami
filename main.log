@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.25)  17 JAN 2026 17:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.25)  18 JAN 2026 16:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1039,7 +1039,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 22.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count343
 \l__pdf_internal_box=\box77
@@ -1191,7 +1196,7 @@ Dictionary: translator-theorem-dictionary, Language: English
 ] [3
 
 ]
-<Plots/Example_Markov.png, id=356, 393.47pt x 377.41pt>
+<Plots/Example_Markov.png, id=395, 393.47pt x 377.41pt>
 File: Plots/Example_Markov.png Graphic file (type png)
 <use Plots/Example_Markov.png>
 Package pdftex.def Info: Plots/Example_Markov.png  used on input line 59.
@@ -1277,32 +1282,41 @@ LaTeX Warning: Reference `eq:reserve' on page 14 undefined on input line 208.
 ] [31
 
 ]
-<Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png, id=2810, 517.4532pt x 327.26265pt>
+<Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png, id=3120, 517.4532pt x 327.26265pt>
 File: Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png Graphic file (type png)
 <use Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png>
-Package pdftex.def Info: Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png  used on input line 527.
-(pdftex.def)             Requested size: 307.28987pt x 194.34666pt.
+Package pdftex.def Info: Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png  used on input line 528.
+(pdftex.def)             Requested size: 276.559pt x 174.9115pt.
 
-Overfull \vbox (6.3614pt too high) detected at line 527
+Overfull \vbox (11.4818pt too high) detected at line 528
  []
 
 [32
 
  <./Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png>]
-<Plots/Empirical_CDF_Markov_States_34.png, id=2898, 481.3182pt x 313.4109pt>
+<Plots/Empirical_CDF_Markov_States_34.png, id=3218, 440.1243pt x 334.1283pt>
 File: Plots/Empirical_CDF_Markov_States_34.png Graphic file (type png)
 <use Plots/Empirical_CDF_Markov_States_34.png>
-Package pdftex.def Info: Plots/Empirical_CDF_Markov_States_34.png  used on input line 536.
-(pdftex.def)             Requested size: 215.10196pt x 140.06279pt.
+Package pdftex.def Info: Plots/Empirical_CDF_Markov_States_34.png  used on input line 549.
+(pdftex.def)             Requested size: 150.57372pt x 114.31079pt.
+<Plots/Quantiles_Markov_States_34.png, id=3219, 570.33075pt x 422.2977pt>
+File: Plots/Quantiles_Markov_States_34.png Graphic file (type png)
+<use Plots/Quantiles_Markov_States_34.png>
+Package pdftex.def Info: Plots/Quantiles_Markov_States_34.png  used on input line 549.
+(pdftex.def)             Requested size: 150.57372pt x 111.4895pt.
  [33
 
- <./Plots/Empirical_CDF_Markov_States_34.png>]
-<Plots/Coefficient_of_Variation_Markov_States_35.png, id=2986, 418.80466pt x 344.36655pt>
+ <./Plots/Empirical_CDF_Markov_States_34.png> <./Plots/Quantiles_Markov_States_34.png>]
+<Plots/Coefficient_of_Variation_Markov_States_35.png, id=3319, 418.80466pt x 344.36655pt>
 File: Plots/Coefficient_of_Variation_Markov_States_35.png Graphic file (type png)
 <use Plots/Coefficient_of_Variation_Markov_States_35.png>
-Package pdftex.def Info: Plots/Coefficient_of_Variation_Markov_States_35.png  used on input line 553.
-(pdftex.def)             Requested size: 215.10196pt x 176.86995pt.
- [34
+Package pdftex.def Info: Plots/Coefficient_of_Variation_Markov_States_35.png  used on input line 555.
+(pdftex.def)             Requested size: 261.19826pt x 214.78192pt.
+
+Overfull \vbox (0.85222pt too high) detected at line 555
+ []
+
+[34
 
  <./Plots/Coefficient_of_Variation_Markov_States_35.png>] [35
 
@@ -1310,11 +1324,31 @@ Package pdftex.def Info: Plots/Coefficient_of_Variation_Markov_States_35.png  us
 
 ] [37
 
-] [38
+]
+<Plots/Empirical_CDF_Cashflows_All_States.png, id=3708, 1075.1367pt x 715.11165pt>
+File: Plots/Empirical_CDF_Cashflows_All_States.png Graphic file (type png)
+<use Plots/Empirical_CDF_Cashflows_All_States.png>
+Package pdftex.def Info: Plots/Empirical_CDF_Cashflows_All_States.png  used on input line 599.
+(pdftex.def)             Requested size: 307.28987pt x 204.38725pt.
+ [38
 
-] [39
+ <./Plots/Empirical_CDF_Cashflows_All_States.png>] [39
 
 ] [40
+
+]
+<Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png, id=3999, 1004.01097pt x 426.03165pt>
+File: Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png Graphic file (type png)
+<use Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png>
+Package pdftex.def Info: Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png  used on input line 624.
+(pdftex.def)             Requested size: 307.28987pt x 130.39125pt.
+ [41
+
+ <./Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png>] [42
+
+] [43
+
+] [44
 
 ]
 \tf@nav=\write6
@@ -1336,21 +1370,21 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8750E3B63B41D3A716BF67C92318ABBF;639.
+(rerunfilecheck)             Checksum: F57BAEFBA0E98788ED7A37B7870B3ADA;722.
  ) 
 Here is how much of TeX's memory you used:
- 23800 strings out of 474116
- 465150 string characters out of 5743681
- 1962187 words of memory out of 5000000
- 45555 multiletter control sequences out of 15000+600000
+ 23866 strings out of 474116
+ 466948 string characters out of 5743681
+ 1965187 words of memory out of 5000000
+ 45612 multiletter control sequences out of 15000+600000
  571241 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,487b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/samizweidler/Library/texlive/2024/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on main.pdf (40 pages, 1526416 bytes).
+Output written on main.pdf (44 pages, 3828697 bytes).
 PDF statistics:
- 3679 PDF objects out of 4296 (max. 8388607)
- 1823 compressed objects within 19 object streams
- 85 named destinations out of 1000 (max. 500000)
- 399 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4423 PDF objects out of 5155 (max. 8388607)
+ 2165 compressed objects within 22 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 422 words of extra memory for PDF output out of 10000 (max. 10000000)
 

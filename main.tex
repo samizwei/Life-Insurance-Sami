@@ -19,7 +19,7 @@
 % \usepackage{amssymb}
 
 \title[Life Insurance Mathematics]{Exam Presentation \\Life Insurance Mathematics}
-\author{Sami Zweidler}
+\author{Sami Zweidler \\ Actuary CLP at Zurich Insurance}
 \institute{ETH Zurich}
 \date{20/01/2026}
 
@@ -273,7 +273,7 @@
 	\end{itemize}
 	Let us look at these random variables individually
 	\begin{itemize}
-		\item term insurance : $Z_1 = v^{k+1} \mathbbm{1}_{k<n}$ \\
+		\item {\bfseries term insurance }: $Z_1 = v^{k+1} \mathbbm{1}_{k<n}$ \\
 		\vskip 0.2cm
 		$A_{x:\overline{n}|}^{\quad 1} = \mathbb{E}[Z_1] = \sum_{k=0}^{n-1} v^{k+1} \prescript{}{k}{p}_x \cdot q_{x+k} = \sum_{k=0}^{n-1} v^{k+1} \cdot\tfrac{l_{x+k}}{l_x}\cdot\tfrac{d_{x+k}}{l_{x+k}} $ \\ \vskip 0.2cm $= \sum_{k=0}^{n-1} \frac{C_{x+k}}{D_x}= \frac{M_x - M_{x+n}}{D_x}$
 		% 						&= \sum_{k=0}^{n-1} \frac{C_{x+k}}{D_x} = \frac{M_x - M_{x+n}}{D_x}
@@ -281,10 +281,10 @@
 		% 	A_{x:\overline{n}|} = \mathbb{E}[Z_1] &= \sum_{k=0}^{n-1} v^{k+1} \prescript{}{k}{p}_x \cdot q_{x+k} = \sum_{k=0}^{n-1} v^{k+1} \cdot\tfrac{l_{x+k}}{l_x}\cdot\tfrac{d_{x+k}}{l_{x+k}} \\
 		% 						&= \sum_{k=0}^{n-1} \frac{C_{x+k}}{D_x} = \frac{M_x - M_{x+n}}{D_x}
 		% \end{align*}
-		\item pure endowment: $Z_2 = v^{k+1} \mathbbm{1}_{k\geq n}$
+		\item {\bfseries pure endowment}: $Z_2 = v^{k+1} \mathbbm{1}_{k\geq n}$
 		\item $ A_{x:\overline{n}|}^{1} = \mathbb{E}[Z_2] = \sum_{k=n}^{\infty} v^n \mathbb{P}[K=k] = v^n \mathbb{P}[K \geq n] = v^n \cdot \prescript{}{n}{p}_x = \frac{D_{x+n}}{D_x}$
 		
-		\item Thus the epxectation value for the mixed enovment is given by \\
+		\item Thus the expectation value for the mixed endowment is given by \\
 			$$ A_{x:\overline{n}|} = \mathbb{E}[Z] = \mathbb{E}[Z_1] + \mathbb{E}[Z_2] = \frac{M_x - M_{x+n} + D_{x+n}}{D_x}$$
 	\end{itemize}
 	% \begin{itemize}
@@ -521,47 +521,68 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 
 \begin{frame}{3.4 MC Averages Analysis}
 	Here we show how the Monte Carlo estimates move with increasing number of simulated trajectories.
+	We see that with increasing number of simulations the estimates converge to the true mathematical reserve (computed via Thiele's equation).
 	\begin{figure}
-		\includegraphics[width=1.0\textwidth]{Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png}
+		\includegraphics[width=0.9\textwidth]{Plots/Mean_Reserve_Estimates_with_SEM_Markov_States_34.png}
 	\end{figure}
 \end{frame}
 
 
 
-\begin{frame}{3.4 CDF for 100'000 Simulations}
+\begin{frame}{3.4 CDF and Quantiles for 100'000 Simulations}
+	% \begin{figure}
+	% 	\includegraphics[width=0.7\textwidth]{Plots/Empirical_CDF_Markov_States_34.png}
+	% \end{figure}
+	% \begin{figure}
 	\begin{figure}
-		\includegraphics[width=0.7\textwidth]{Plots/Empirical_CDF_Markov_States_34.png}
+		\begin{minipage}{0.49\textwidth}
+			\includegraphics[width=\textwidth]{Plots/Empirical_CDF_Markov_States_34.png}
+			\caption{Empirical CDF of the reserve}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.49\textwidth}
+			\includegraphics[width=\textwidth]{Plots/Quantiles_Markov_States_34.png}
+			\caption{Quantiles of the reserve}
+		\end{minipage}
 	\end{figure}
 
+\end{frame}
+
+\begin{frame}{3.5 coefficient of variation across different states}	
+	\begin{figure}
+		\includegraphics[width=0.85\textwidth]{Plots/Coefficient_of_Variation_Markov_States_35.png}
+	\end{figure}
 \end{frame}
 
 
 \begin{frame}{3.5 Discussion of Risk Levels of States}
-	In order to dicuss the riskiness of the states we look at the coefficient of variation  of the reserve in each state\\
-	\begin{figure}
-		\includegraphics[width=0.7\textwidth]{Plots/Coefficient_of_Variation_Markov_States_35.png}
-	\end{figure}
-	% \begin{itemize}
-	% 	\item 	{ \bfseries Rule of thumb}: Under identical mortality and disability assumptions, insured states associated with higher mathematical reserves are riskier for the insurer.
-	% 	\item The state $(D,D)$ is thus the riskiest state since both persons are disabled and with no possibility of reactivation. Hence the insurer pays the highest possible annuity of $18'000$ per year.
-	% 	\item We sort the states according to their risk level (from riskiest to safest):
-	% 		\begin{align*}
-	% 			(3,3) &> (D,D) >  (3,S) > (3,T) > (D,T) > (D,S) \\
-	% 			&> (S,3) > (T,3) > (S,D) > (T,D) > (S,S)
-	% 		\end{align*}
-	% \end{itemize}
+	In order to dicuss the riskiness of the states we consider two risk meaures: value at risk (VaR) and the coefficient of variation (CoV):
+	\begin{itemize}
+		\item The {\bfseries VaR} at level provides a concrete monetary amount for tail losses, making it ideal for determining how much capital to hold in reserve \\
+		\item Directly answers: "How much money do we need to cover losses in $95\%$ of scenarios?"
+		\vskip 0.3cm
+		\item The {\bfseries CoV} normalizes volatility by the mean, allowing fair comparison between states with very different expected losses \\
+		\item Directly answers: "Which state has the most unpredictable or volatile losses relative to its average?"
+	\end{itemize}
+	% In terms of the insurer's risk management, VaR helps ensure sufficient capital buffers, while CoV aids in portfolio diversification by identifying states with high relative volatility.\\
+	\begin{itemize}
+		\item W.r.t VaR at level $95\%$ we conlcude that the state $(3,3)$ and $(D,D)$ are the most dangerous states.
+		\item W.r.t CoV the most dangerous state is $(D,T)$.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{3.5 Discussion of Risk Levels of States}
+	Now since it is stated in the task to assume that the insurer has the adequate amount of reserves we assume that the VaR is also ready covered since this measure tells us on how much to reserve.\\
+	Hence we judge the riskiness by the CoV, which measures how much harder it is to maintain adequate reserves over time.
 	\begin{itemize}
 		\item The state $(D,T)$ is the most dangerous state (has highest CoV) since the man is disabled and rather young (30y).
 			 Hence he is has three possibilities: reactivate, remain disabled for extended periods.
 		\item The diversification from having two people in similar but independent states reduces relative variability
 		\item The state $(3,3)$ is the safest one (although highest annuity to be paid) since both persons are disabled and either remain disabled or die. 
-		\item So ranking the states according to their risk level (from riskiest to safest) we get:
+		\item So ranking the states according to their risk level (from riskiest to safest) is given by sorting the CoV in decreasing order:
 			\begin{align*}
-				(D,T) &> (D,D) >  (3,T) > (D,S) > (3,3) > (3,S) \\
-				&> (T,3) > (S,D) > (S,3) > (T,D) > (S,S)
+				(D,T) &> (S,S) >  (D,S) > (T,D) > (S,D) > (D,D) \\
+				&> (S,3) > (3,T) > (3,S) > (T,3) > (3,3)
 			\end{align*}
 	\end{itemize}	
 \end{frame}
@@ -571,7 +592,15 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 \end{frame}
 
 
-\begin{frame}{3.7}
+\begin{frame}{3.7 Cashflows CDF distribution for age 65 and 66}
+	\begin{figure}
+		\includegraphics[width=1.\textwidth]{Plots/Empirical_CDF_Cashflows_All_States.png}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}{3.7 Observations}
+	
 \end{frame}
 
 
@@ -580,16 +609,18 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 	\begin{itemize}
 		\item Assuming the 8 policies are independent, we compute the total loss as the sum of the indiviudal mathematical reserves.
 			$$ \mathbb{E}[L] = \sum_{i=1}^8 \mathbb{E}[L_i] = 1'816'458.10$$
-		\item Now we want to compute the stop loss premium $\Pi(\beta)$ for the deductibles $\beta \in \{1.5\cdot \mathbb{E}[L], 3 \cdot \mathbb{E}[L]\}$
+		\item Now we want to compute the stop loss premium $\Pi(\beta)$ for the { \bfseries deductibles} $\beta \in \{1.5\cdot \mathbb{E}[L], 3 \cdot \mathbb{E}[L]\}$
 		\item The stop loss premium is defined as $$\Pi(\beta) = \mathbb{E}[(L- \beta)_+] =  \int_{\beta}^{\infty} (1-F(x)) \, dx $$
-		\item In order to create a histogram-based approximation of the cumulative distribution function $F(x)$ we use 1'000'000 simulated portfolio losses (in total 8'000'000 simulations)
-		\item 
+		\item In order to create a histogram-based approximation of the cumulative distribution function $F(x)$ we use 1'000'000 simulated portfolio losses (in total 8'000'000 simulations) 
 	\end{itemize}
 \end{frame}
 
 
 \begin{frame}{3.8: 8-policy portfolio simulation}
-	Inser pciture of histogram here
+	Here we plot the histogram and empirical CDF of the portfolio reserves for 1'000'000 siumlation runs per policy (in total 8'000'000 simulations).
+	\begin{figure}
+		\includegraphics[width=1.\textwidth]{Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png}
+	\end{figure}
 \end{frame}
 
 
@@ -601,330 +632,23 @@ Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$
 		\item The integral representation approximated by the Riemann sum: $$\Pi(\beta) \approx \sum_{i:\, a_i \ge \beta} \bar F_i \,(a_{i+1}-a_i) $$
 		\item Plugging in the values for $\beta$ we get:
 			\begin{align*}
-				\Pi(1.5\cdot \mathbb{E}[L]) &= \\
-				\Pi(3\cdot \mathbb{E}[L]) &=
+				\Pi(1.5\cdot \mathbb{E}[L]) &= 10.25\\
+				\Pi(3\cdot \mathbb{E}[L]) &= 0.0
 			\end{align*}
 	\end{itemize}
 \end{frame}
-% \section{Appendix}
 
-% \paragraph{Histogram setup.}
-% Let the bins of the histogram be
-% \[
-% [a_1,a_2),\;[a_2,a_3),\;\dots,\;[a_N,a_{N+1}) .
-% \]
-% Assume the survival function is constant on each bin:
-% \[
-% \bar F(x) = 1 - F(x) \approx \bar F_i 
-% \quad \text{for } x \in [a_i,a_{i+1}) ,
-% \]
-% where $\bar F_i$ denotes the value of the survival function on bin $i$.
 
-% \paragraph{Discrete approximation.}
-% The integral representation
-% \[
-% \Pi(\beta) = \int_{\beta}^{\infty} \bar F(x)\,dx
-% \]
-% is approximated by the Riemann sum
-% \[
-% \Pi(\beta) \approx 
-% \sum_{i:\, a_i \ge \beta}
-% \bar F_i \,(a_{i+1}-a_i) .
-% \]
+\section{Appendix}
 
-
-
-
-%  \begin{frame}{Fixed Point Iteration Method}
-
-%  \begin{block}{Definition}<1->
-% Let U be a subset of a metric space X.
-% \\A function g:U $\rightarrow$X called \textbf{Lipschitz continuous} provided there exists a constant $\lambda\ge$ 0 (called Lipschitz constant)
-% \\such that $\forall$ x,y$\in$U d(g(x),g(y))$\le$d(x,y)
-% \\if $\lambda\in$[0,1], then g is called \textbf{contraction} (with contraction constant $\lambda$).
-% \end{block} 
-%  \begin{block}{Theorem (A Fixed Point Theorem)}<2->
-%  Suppose $g:[a,b]\rightarrow[a,b]$ is continuous. Then g has a fixed point.
- 
-
-% \end{block}
-% \end{frame}
-%  \begin{frame}{Fixed Point Iteration Method}
-% \begin{block}{Lemma}<1->
-%  A contraction has at most one fixed point.
- 
-
-% \end{block}
-% \begin{block}{Corollary}<2->
-% Suppose $g:[a,b]\rightarrow[a,b]$ is continuous and $\lambda:=sup\mid g'(x)\mid<1$ for $x\in (a,b)$
-% \\Then g is a contraction with contraction constant $\lambda.$
-% \end{block}
-% \vskip 1cm
-
-% \end{frame}
-
-% \begin{frame}{Graphical determination of the existence of a fixed point for the function $g(x)= \frac{x^2-3}{2}$}
-
-% \includegraphics[width=355px, height= 200px]{Figure2.jpg}
-% \end{frame}
-
-
-
-% \subsection{Banach Fixed Point Theorem}
-
-% \begin{frame}{Banach Fixed Point Theorem}
-
-% \begin{theorem}[Banach Fixed Point Theorem]
-%   \begin{itemize}
-
-
-%  \item[]<1-> Let U be a complete subset of a metric space X, and let g:U$\rightarrow$U be a contraction with contraction constant $\lambda$.
-%   \\Then  \begin{itemize}
-%     \item<2-> g has a unique fixed point, say p.
-%     \item<2->For any sequence $\left\{x_{n}\right\}$ defined by $x_n$=g($x_{n-1}$), n=1,2,,...
-%     \\converges to this unique fixed point p.
-%     \item[]<3->Moreover, we have the  \textbf{a priori} error estimate
-%     $$ \mid x_n-p\mid\le\frac{\lambda^n}{1-\lambda}\mid x_1-x_0\mid$$
-%     \item[]<4->and the \textbf{a posteriori} error estimate 
-%       $$\mid x_n-p\mid\le\frac{\lambda}{1-\lambda}\mid x_n-x_{n-1}\mid$$
-% \end{itemize}
-% \end{itemize}  
-% \end{theorem}
-% \vskip 1cm
-
-
-% \end{frame}
-
-
-% \begin{frame}{Banach Fixed Point Theorem}
-
-% \begin{block}{Proof}
-
-% For $n > m$ , we have
-% \begin{align*}
-% \mid x_n-x_m\mid&=\mid x_n-x_{n-1}+x_{n-1}-x_{n-2}+...+x_{m+1}-x_{m}\mid\\
-% &\le\mid x_n-x_{n-1}\mid + \mid x_{n-1}-x_{n-2}\mid+...+\mid x_{m+1}-x_{m}\mid\\
-% &by  *\\
-% &\le(\lambda^{n-1}+\lambda^{n-2}+...+\lambda^{m})\mid x_1-x_0\mid\\
-% &=\lambda^{m}(\lambda^{n-m-1}+\lambda^{n-m-2}+...+1)\mid x_1-x_0\mid\\
-% &=\lambda^{m}\frac{1-\lambda^{n-m}}{1-\lambda}\mid x_1-x_0\mid\le \frac{\lambda^m}{1-\lambda}\mid x_1-x_0\mid
-%  \end{align*}
- 
-%  so that ${x_n}$ is Cauchy sequence in U.
-%  \\Since U is complete, ${x_n}$ converges to a point p $\in$ U
-% $$*\color{red}\mid x_k-x_{k-1}\mid=\mid g(x_{k-1})-g(x_{k-2})\mid\le\lambda\mid x_{k-1}-x_{k-2}\mid\le..\le\lambda^{k-1}\mid x_1-x_0\mid\color{black}$$
-
-% \end{block}
-
-% \vskip 1cm
-
-% \end{frame}
-
-
-% \begin{frame}
-% \begin{proof}[Continue]
-% \begin{itemize}
-
-% \item[]<1->Now,since g being contraction is continuous, we have 
-% $$p=\lim_{n\to\infty}x_{n}=\lim_{n\to\infty}g(x_{n-1})=g(lim_{n\to\infty}x_{n-1})=g(p)$$
-%  \\so that p is fixed point of g.
-%  \\By the lemma p is the unique fixed point of g.
-%  \item[]<2->Since $$\mid x_n-x_m\mid\le \frac{\lambda^m}{1-\lambda}\mid x_1-x_0\mid,$$
-%  \\letting n$\rightarrow\infty$
-%  \item[]<3->we get $$\mid p-x_m\mid\le \frac{\lambda^m}{1-\lambda}\mid x_1-x_0\mid$$ 
-%  \\for $y_0=x_{n-1},$ $y_1= x_n$
-% $$\mid y_1- p\mid \le \frac{\lambda}{1-\lambda}\mid y_1-y_0\mid$$
-%  \end{itemize}
-%  \end{proof}
-% \vskip 1cm
-
-% \end{frame}
-
-% \subsection{The Fixed Point Algorithm}
-
-% \begin{frame}{The Fixed Point Algorithm}
-
-
-
-% \begin{block}{The Fixed Point Algorithm}<1->
-
-
-% If g has a fixed point p, then the fixed point algorithm generates a sequence $\left\{x_n\right\} $ defined as
-% \\$x_0$: arbitrary but fixed,
-% \\$x_n=g(x_{n-1})$, n=1,2,3,... to approximate p.
-% \end{block}
-
-% \end{frame}
-
-% \subsection{Fixed Point The Case Where Multiple Derivatives Are Zero at The Fixed Point}
-% \begin{frame}{Fixed Point The Case Where Multiple Derivatives Are Zero at The Fixed Point}
-% \begin{block}{Theorem}
-% \begin{itemize}
-
-% \item[]<1->Let g be a continuous function on the closed internal $[a,b]$ with $\alpha>1$ continuous derivatives on the internal (a,b). 
-% \\Further, Let p $\in $(a,b) be a fixed point of g. 
-% \item[]<2->if $$g'(p)=g''(p)=...=g^{(\alpha-1)}(p)=0$$ but $g^{(\alpha)}(p)\neq 0$, 
-
-% \item[]<3->then there exist a $\delta>0$ such that for any $p_0\in[p-\delta,p+\delta]$, the sequence $p_n=g(p_{n-1})$ converges to the fixed point p of order $\alpha$ with asymtotic error constant $$\lim_{n\to\infty}\frac{\mid e_{n+1}\mid}{\mid e_n\mid^\alpha}=\frac{\mid g^{(\alpha)}(p)\mid}{\alpha!}$$.
-
-% \end{itemize}
-% \end{block}
-% \end{frame}
-
-
-% \begin{frame}
-
-% \begin{block}{Proof}
-% \begin{itemize}
-
-
-% \item[]<1->Let$'$s start by establishing the existence of $\delta>0$ such that for any $p_0\in [p-\delta,p+\delta]$, the sequence $p_n=g(p_{n-1})$ converges to the fixed point p.
-
-% \item[]<2->Let $\lambda<1$. Since $g'(p)=0$ and $g'$ is continuous, it follows that there exists a $\delta>0$ such that$\mid g'(x)\mid\le \lambda<1$ for all $x\in I \equiv[p-\delta,p+\delta]$ From this, it follows that g:I$\rightarrow$I; for if x$\in$ I then,
-% \item[]<3->
-% \begin{align*}
-% \mid g(x)-p\mid&=\mid g(x)-g(p)\mid\\
-% &=\mid g'(\xi)\mid\mid x-p\mid\\
-% &\le \lambda\mid x-p\mid<\mid x-p\mid\\
-% &\le\delta
-% \end{align*}
-% \item[]<4->Therefore by the a fixed point theorem established earlier, the sequence $p_n=g(p_{n-1})$ converges to the fixed point p for any $p_0\in [p-\delta,p+\delta]$.
-
-% \end{itemize}
-% \end{block}
-
-% \vskip 1cm
-
-% \end{frame}
-
-
-
-% \begin{frame}
-
-% \begin{block}{Continue}
-% \begin{itemize}
-
-
-% \item[]<1->To establish the order of convergence, let x$\in$ I and expand the iteration function g into a Taylor series about x=p:
-% $$g(x)=g(p)+g'(p)(x-p)+...+\frac{g^{\alpha-1}(p)}{(\alpha-1)!}(x-p)^{\alpha-1}+\frac{g^{\alpha}(\xi)}{(\alpha)!}(x-p)^{\alpha}$$ 
-% \\where $\xi$ is between x and p. 
-% \item[]<2->Using the hypotheses regarding the value of $g^{(k)}(p)$ for $1\le k\le \alpha-1$ and letting $x=p_n$, the Taylor series expansion simplifies to $$p_n+1-p=\frac{g^(\alpha)(\xi)}{\alpha!}(p_n-p)^\alpha$$
-% \\where $\xi$ is now between $p_n$ and p.
-
-% \end{itemize}
-% \end{block}
-
-% \vskip 1cm
-
-% \end{frame}
-
-
-% \begin{frame}
-
-% \begin{proof}[Continue]
-% \begin{itemize}
-% \item[]<1->The definitions of fixed point iteration scheme and of a fixed point have been used to replace $g(p_n)$ with $p_{n+1}$ and g(p) with p.
-
-%  \item[]<2->Finally, let $n\rightarrow\infty$.Then $p_n\rightarrow p$, forcing $\xi\rightarrow$ p also.
-% Hence $$\lim_{n\to\infty}\frac{\mid e_{n+1}\mid}{\mid e_n\mid^\alpha}=\frac{\mid g^{(\alpha)}(p)\mid}{\alpha!}$$
-% \\or $p_n\rightarrow$ p of order $\alpha$.
-
-% \end{itemize}
-% \end{proof}
-
-
-% \end{frame}
-% \section{Steffensen's Acceleration Method}
-
-% \subsection{Aitken's $\Delta^2$ Method}
-% \begin{frame}
-
-% \begin{theorem}[Aitken's $\Delta^2$ method]
-% \begin{itemize}
-% \item[] <1-> Suppose that
-% \begin{itemize}
-% 	\item $\left\{x_{n}\right\}$ is a sequence with $x_{n}\neq$ p for all n $\in \mathbb{N}$ 
-% 	\item there is a constant c $\in \Re\setminus \left\{ \mp 1 \right\}$ and a sequece $\left\{ \delta_{n} \right\}$
-
-% 		such that 
-% 		\begin{itemize}
-% 			\item $\lim_{n\rightarrow\infty}\delta_{n}=0$
-% 			\item $x_{n+1}-p=(c+\delta_{n})(x_{n}-p)$ for all n $\in  \mathbb{N}$
-% 		\end{itemize}
-% 	\end{itemize}
-% 	\item[] <2->Then
-	
-% 	\begin{itemize}
-% 		\item $\left\{x_{n}\right\}$ converges to p iff $\left|c\right|<1$
-% 		\item if $\left|c\right|<1$ , then 
-% 	\[ 
-% 	y_{n}=\frac{x_{n+2}x_{n}-x_{n+1}^2}{x_{n+2} - 2x_{n+1}+x_{n}}= x_n-\frac{(x_{n+1}-x_n)^2}{x_{n+2}-2x_{n+1}+x_n}
-% 	\] 
-% 		\end{itemize}
-% 		\      is well-defined for all sufficiently large n.
-% 		\item[]<3-> Moreover $\left\{y_{n}\right\}$ converges to p faster than $\left\{x_{n}\right\}$ in the sense that
-% 		\[ 
-% 		\lim_{n\rightarrow\infty} \frac{y_{n}-p}{x_{n}-p}=0
-% 		\]
-%  \end{itemize}
-
-% \end{theorem}
-
-% \vskip 1cm
-
-% \end{frame}
-
-% \begin{frame}
-% \begin{proof}
-% \begin{itemize}
-% 	\item[]<1-> Let $e_{n} = x_{n}-p$ 
-% 	\item[]<2-> $y_{n}-p=\frac{x_{n+2}x_{n}-x_{n+1}^2}{x_{n+2} - 2x_{n+1}+x_{n}}-p$
-% 	\item[]<3-> $y_{n}-p$=$\frac{(e_{n+2}+p)(e_{n}+p)-(e_{n+1}+p)^2}{(e_{n+2}+p)-2(e_{n+1}+p)+(e_{n}+p)}$
-% 	\item[]<4-> $y_{n}-p$=$\frac{e_{n+2}e_{n}-e_{n}^2}{e_{n+2}-2e_{n+1}+e_{n}}$
-% 	\item[]<5-> since we have
-% 	\item[]<5-> $x_{n+1}-p= (c+\delta_{n})(x_{n}-p)$ 
-% 	\ and $e_{n+1}=(c+\delta_{n}e_{n})$
-% 	\item[]<6-> $y_{n}-p$=$\frac{(c+\delta_{n+1})(c+\delta_{n})e_{n}e_{n}-(c+\delta_{n})^2e_{n}^2}{(c+\delta_{n+1})(c+\delta_{n})e_{n}-2(c+\delta_{n})e_{n}+e_{n}}$
-% 	\item[]<7-> $y_{n}-p$=$\frac{(c+\delta_{n+1})(c+\delta_{n})-(c+\delta_{n})^2}{(c+\delta_{n+1})(c+\delta_{n})-2(c+\delta_{n})+1}$ $(x_{n}-p)$
-% 	\item[]<8-> $y_{n}-p$=$\frac{(c+\delta_{n})(\delta_{n+1}-\delta_{n})}{(c-1)^+c(\delta_{n+1}+\delta_{n})+\delta_{n}(\delta_{n+1}-2)}$
-% 	\item[]<9-> Therefore $\lim_{n\rightarrow\infty} \frac{y_{n}-p}{x_{n}-p}=0$
-% \end{itemize}
-% \end{proof}
-
-% \end{frame}
-% \subsection{Steffensen's Acceleration Method}
-% \begin{frame}
-% \begin{block}{Steffensen's Acceleration Method}
-% \begin{itemize}
-
-
-
-% \item[]<1->Steffensen’s Method is a combination of fixed-point iteration and the Aitken’s $\Delta^2$ method: 
-
-% 	\item[]<2->Suppose we have a fixed point iteration: $$x_0,x_1=g(x_0),x_2=g(x_1),...$$
-% 	\item[]<3->Once we have $x_0, x_1,$ and $x_2,$ we can compute $$ y_0=x_0-\frac{(x_1-x_0)^2}{x_2-2x_1+x_0}$$ 
-% At this point we "restart" the fixed point iteration with $x_0=y_0$
-% 	\item[]<4->e.g.\color{brown} $$x_3=y_0, x_4=g(x_3), x_5=g(x_4),$$\color{black}
-% and compute \color{brown} $$y_3=x_3-\frac{(x_4-x_3)^2}{x_5-2x_4+x_3}$$ \color{black}
-
-% \end{itemize}
-
-% \end{block}
-% \end{frame}
-% \section{Comparison With Fixed point iteration and Steffensen's Acceleration Method}
-% \begin{frame}{Comparison with Fixed Point Iteration and Steffensen's Acceleration Method}
-% \begin{block}{EXAMPLE}
-% \begin{itemize}
-
-
-% \item[]<1-> Use the Fixed Point iteration method to find a solution to $f(x) = x^2-2x-3$ using $x_0=0$, tolerance =$10^{-1}$ and compare the approximations with those given by Steffensen's Acceleration method with $x_0=0$, tolerance = $10^{-2}$.
-% \item<2-> We can see that my MATLAB code while  Fixed Point iteration method reaches the root by 788 iteration, Steffensen's Acceleration method reaches the root by only 3 iterations. 
-% \end{itemize}
-
-% \end{block}
-
-% \end{frame}
-
+\begin{frame}{Commutation Functions}
+	We have the following declarations: $l_x$ : number of living persons at age $x$ \\
+	$d_x = l_x - l_{x+1}$ : number of deaths between age $x$ and $x+1$
+	\begin{align*}
+		D_x &= v^x\cdot l_x, \quad N_x = \sum_{k=x}^{\infty} D_k,  \quad S_x = \sum_{k=x}^{\infty} N_k \\
+		C_x &= v^{x+1} \cdot d_x, \quad M_x = \sum_{k=x}^{\infty} C_k, \quad R_x = \sum_{k=x}^{\infty} M_k
+	\end{align*}
+\end{frame}
 
 
 \end{document}
