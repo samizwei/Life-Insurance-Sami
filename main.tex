@@ -687,11 +687,17 @@ This means that if one person is disabled and the other is healthy, the probabil
 		D_x &= v^x\cdot l_x, \quad N_x = \sum_{k=x}^{\infty} D_k,  \quad S_x = \sum_{k=x}^{\infty} N_k \\
 		C_x &= v^{x+1} \cdot d_x, \quad M_x = \sum_{k=x}^{\infty} C_k, \quad R_x = \sum_{k=x}^{\infty} M_k
 	\end{align*}
+	\vskip 0.5cm
+	Application of Thiele's diff. equation:
+	\begin{align*}
+		\ddot{a}_{x:\overline{n}|} &= 1 + v\cdot p_x \cdot \ddot{a}_{x+1:\overline{n-1}|} \\
+		A_{x:\overline{n}|} &= v \cdot q_x + v \cdot p_x \cdot A_{x+1:\overline{n-1}|} \\
+	\end{align*}
 \end{frame}
 
 
 \begin{frame}{More Formulas}
-	Life Insurance with return beneft: in case of death before age $n$ the assets held up to that point in time paid-in premiums are returned
+	{\bfseries Life Insurance with return beneft}: in case of death before age $n$ the assets held up to that point in time paid-in premiums are returned
 	\begin{align*}
 		P_x \ddot{a}_{x:\overline{n}|} = P_x (IA)_{x:\overline{n}|}^1  + A_{x:\overline{n}|}^{\quad 1}
 	\end{align*}
@@ -699,12 +705,6 @@ This means that if one person is disabled and the other is healthy, the probabil
 	$$ P_x = \frac{\prescript{}{n}{|}\ddot{a}_x^{(m)}}{\ddot{a}_{x:\overline{n}|} - (IA)_{x:\overline{n}|}^1}$$
 	where $(IA)_{x:\overline{n}|}^1$ denotes the linear increased death benefit: 
 $$ (IA)_{x:\overline{n}|}^1 = n\cdot A_{x:\overline{n}|}^1 - A_{x:\overline{n-1}|} - \dots - A_{x:\overline{1}|} = \frac{R_x - R_{x+n} - n \cdot M_{x+n}}{D_x}$$ 
-\end{frame}
-
-
-
-\begin{frame}{}
-	
 \end{frame}
 
 

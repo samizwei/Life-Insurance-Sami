@@ -482,6 +482,7 @@ INPUT ./Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png
 INPUT ./Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png
 INPUT ./Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png
 INPUT ./Plots/Histogram_and_Empirical_CDF_Portfolio_Reserves.png
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 OUTPUT main.nav
 OUTPUT main.toc
 OUTPUT main.snm
